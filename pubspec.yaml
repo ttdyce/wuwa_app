@@ -1,0 +1,17 @@
+name: wuwa_app
+description: Wuthering Waves News Hub - wuwa.app
+version: 1.0.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  jaspr: ^0.18.0
+  http: ^1.2.0
+
+dev_dependencies:
+  jaspr_builder: ^0.18.0
+
+jaspr:
+  mode: static
+  base: /
