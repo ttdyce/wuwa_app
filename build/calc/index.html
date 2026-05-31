@@ -46,8 +46,6 @@
           <h1 class="calc-title">💎 鳴潮抽卡計算器</h1>
           <p class="calc-subtitle">Wuthering Waves Draw Calculator</p>
           <div class="calc-divider"></div>
-
-          <!-- Currency → Draws -->
           <div class="calc-section">
             <label class="calc-label">星聲 (Astrites) → 抽數</label>
             <div class="calc-row">
@@ -60,14 +58,11 @@
             </div>
             <div class="calc-formula">÷ 160 = 抽數</div>
           </div>
-
           <div class="calc-divider"></div>
-
-          <!-- Draws → Currency -->
           <div class="calc-section">
             <label class="calc-label">抽數 → 需要星聲 (支援算式)</label>
             <div class="calc-row">
-              <input id="draws" class="calc-input" placeholder="輸入抽數或算式 e.g. 80+160" oninput="calcAstrites()" type="text"/>
+              <input id="draws" class="calc-input" placeholder="輸入抽數或算式 (e.g. 80+80)" oninput="calcAstrites()" type="text"/>
               <span class="calc-arrow">→</span>
               <div class="calc-result">
                 <span id="astrites-from-draws" class="calc-result-num">0</span>
@@ -81,10 +76,7 @@
             </div>
             <div class="calc-formula">× 160 = 所需星聲</div>
           </div>
-
           <div class="calc-divider"></div>
-
-          <!-- Reference info -->
           <div class="calc-ref">
             <p class="calc-ref-title">📊 換算參考</p>
             <div class="calc-ref-grid">
@@ -99,36 +91,42 @@
       <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
     </div>
     <script>
-function calcDraws() {
-  var v = parseInt(document.getElementById('astrites').value) || 0;
-  var draws = Math.floor(v / 160);
-  document.getElementById('draws-from-astrites').textContent = draws;
-}
-
-function calcAstrites() {
-  var input = document.getElementById('draws').value.trim();
-  if (!input) {
-    document.getElementById('astrites-from-draws').textContent = '0';
-    return;
-  }
-  try {
-    // Sanitize: only allow digits, operators, parentheses, spaces, decimals
-    var sanitized = input.replace(/[^0-9+\-*/(). ]/g, '');
-    var result = eval(sanitized);
-    var v = Math.floor(result) || 0;
-    var astrites = v * 160;
-    document.getElementById('astrites-from-draws').textContent = astrites.toLocaleString();
-  } catch (e) {
-    // Invalid expression — leave result as-is
-  }
-}
-
-function addDraws(n) {
-  var el = document.getElementById('draws');
-  var val = el.value.trim();
-  el.value = val ? val + ' + ' + n : n;
-  calcAstrites();
-}
+    function calcDraws() {
+      var v = parseInt(document.getElementById('astrites').value) || 0;
+      var draws = Math.floor(v / 160);
+      document.getElementById('draws-from-astrites').textContent = draws;
+    }
+    
+    function calcAstrites() {
+      var input = document.getElementById('draws').value.trim();
+      if (!input) {
+        document.getElementById('astrites-from-draws').textContent = '0';
+        return;
+      }
+      
+      try {
+        // Basic sanitization and evaluation for math
+        // Only allow numbers and ()+-*/.
+        var sanitized = input.replace(/[^0-9+\-*/(). ]/g, '');
+        var result = eval(sanitized);
+        var v = parseInt(result) || 0;
+        var astrites = v * 160;
+        document.getElementById('astrites-from-draws').textContent = astrites.toLocaleString();
+      } catch (e) {
+        // If eval fails, just show 0 or keep previous
+      }
+    }
+    
+    function addDraws(n) {
+      var el = document.getElementById('draws');
+      var val = el.value.trim();
+      if (val) {
+        el.value = val + ' + ' + n;
+      } else {
+        el.value = n;
+      }
+      calcAstrites();
+    }
     </script>
   </body>
 </html>
