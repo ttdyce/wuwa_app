@@ -9,6 +9,25 @@ const listApiUrl =
 String articleApiUrl(int id) =>
     'https://hw-media-cdn-mingchao.kurogame.com/akiwebsite/website2.0/json/G152/zh-tw/article/$id.json';
 
+Future<Map<int, Map<String, dynamic>>> loadExistingArticles() async {
+  final file = File('data/articles.json');
+  if (!file.existsSync()) return {};
+
+  try {
+    final raw = json.decode(await file.readAsString()) as List<dynamic>;
+    final map = <int, Map<String, dynamic>>{};
+    for (final item in raw) {
+      final m = item as Map<String, dynamic>;
+      map[m['id'] as int] = m;
+    }
+    print('Loaded ${map.length} existing articles from cache');
+    return map;
+  } catch (e) {
+    print('WARN: Could not parse existing articles.json, starting fresh: $e');
+    return {};
+  }
+}
+
 Future<void> main() async {
   print('Fetching article list from official API...');
   final response = await http.get(Uri.parse(listApiUrl));
@@ -21,17 +40,39 @@ Future<void> main() async {
   final List<dynamic> raw = json.decode(response.body);
   print('Received ${raw.length} articles from list API');
 
+  // Load cached content so we only fetch new/changed articles
+  final existing = await loadExistingArticles();
+
   // First pass: build article list from the list API
   final articles = <Map<String, dynamic>>[];
+  final idsToFetch = <int>[];
+
   for (final json in raw) {
+    final id = json['articleId'] as int;
+    final title = json['articleTitle'] as String;
+    final startTime = json['startTime'] as String;
+    final sortingMark = json['sortingMark'] ?? 0;
+
+    final cached = existing[id];
+    // Reuse cached content if article exists and metadata unchanged
+    final isUnchanged = cached != null &&
+        cached['title'] == title &&
+        cached['startTime'] == startTime &&
+        cached['sortingMark'] == sortingMark &&
+        (cached['content'] as String).isNotEmpty;
+
+    if (!isUnchanged) {
+      idsToFetch.add(id);
+    }
+
     articles.add({
-      'id': json['articleId'],
-      'title': json['articleTitle'],
-      'content': '', // Will be filled from detail API
+      'id': id,
+      'title': title,
+      'content': isUnchanged ? cached!['content'] : '', // filled later
       'articleType': json['articleType'] ?? 90,
       'createTime': json['createTime'],
-      'startTime': json['startTime'],
-      'sortingMark': json['sortingMark'] ?? 0,
+      'startTime': startTime,
+      'sortingMark': sortingMark,
       'isPinned': (json['top'] ?? 0) == 1,
     });
   }
@@ -45,13 +86,18 @@ Future<void> main() async {
     return dateB.compareTo(dateA);
   });
 
-  // Second pass: fetch full content for each article
-  print('Fetching full content for ${articles.length} articles...');
+  // Second pass: fetch full content only for new/changed articles
+  final cachedCount = articles.length - idsToFetch.length;
+  print(
+      'Fetching content for ${idsToFetch.length} new/changed articles ($cachedCount cached)...');
+
   int fetched = 0;
   int failed = 0;
 
-  for (final article in articles) {
-    final id = article['id'] as int;
+  // Build a lookup for quick content assignment
+  final contentMap = <int, String>{};
+
+  for (final id in idsToFetch) {
     try {
       final detailResponse = await http.get(
         Uri.parse(articleApiUrl(id)),
@@ -60,7 +106,7 @@ Future<void> main() async {
 
       if (detailResponse.statusCode == 200) {
         final detail = json.decode(detailResponse.body);
-        article['content'] = detail['articleContent'] ?? '';
+        contentMap[id] = detail['articleContent'] ?? '';
         fetched++;
       } else {
         print('  WARN: Failed to fetch article $id (HTTP ${detailResponse.statusCode})');
@@ -72,15 +118,23 @@ Future<void> main() async {
     }
 
     // Progress indicator every 50 articles
-    if ((fetched + failed) % 50 == 0) {
-      print('  Progress: ${fetched + failed}/${articles.length} (${fetched} ok, ${failed} failed)');
+    if ((fetched + failed) % 50 == 0 && (fetched + failed) > 0) {
+      print('  Progress: ${fetched + failed}/${idsToFetch.length} (${fetched} ok, ${failed} failed)');
     }
 
     // Small delay to be polite to the server
     await Future.delayed(Duration(milliseconds: 50));
   }
 
-  print('Content fetch complete: $fetched ok, $failed failed');
+  // Apply fetched content back to articles
+  for (final article in articles) {
+    final id = article['id'] as int;
+    if (contentMap.containsKey(id)) {
+      article['content'] = contentMap[id];
+    }
+  }
+
+  print('Content fetch complete: $fetched ok, $failed failed, $cachedCount cached');
 
   final outputFile = File('data/articles.json');
   await outputFile.parent.create(recursive: true);
