@@ -4,12 +4,10 @@ on:
   schedule:
     # Twice daily at 04:00 and 13:00 UTC (12:00 and 21:00 UTC+8)
     - cron: '0 4,13 * * *'
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -37,6 +35,18 @@ jobs:
 
       - name: Build site
         run: dart run lib/main.dart
+
+      - name: Commit updated data and build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ build/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto: update data/ and build/ [skip ci]"
+            git push
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
