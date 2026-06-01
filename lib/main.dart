@@ -8,6 +8,20 @@ import 'pages/home.dart';
 import 'pages/article_page.dart';
 import 'pages/calc_page.dart';
 
+/// Favicon link tags injected into every HTML <head>
+const _faviconTags = '''
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
+    <meta name="theme-color" content="#0a0e1a"/>''';
+
+const _faviconTagsIndex = '''
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
+    <meta name="theme-color" content="#0a0e1a"/>''';
+
 void main() async {
   Jaspr.initializeApp();
 
@@ -40,7 +54,7 @@ void main() async {
   );
 
   final homeResponse = await renderComponent(homeApp);
-  await _writePage('index.html', homeResponse.body);
+  await _writePage('index.html', _injectFavicon(homeResponse.body, index: true));
   print('Generated: index.html');
 
   // Render individual article pages
@@ -51,7 +65,7 @@ void main() async {
       body: ArticlePage(article: article),
     );
     final response = await renderComponent(articleApp);
-    await _writePage('article/${article.id}.html', response.body);
+    await _writePage('article/${article.id}.html', _injectFavicon(response.body));
   }
   print('Generated ${articles.length} article pages');
 
@@ -62,13 +76,22 @@ void main() async {
     body: const CalcPage(),
   );
   final calcResponse = await renderComponent(calcApp);
-  await _writePage('calc/index.html', calcResponse.body);
+  await _writePage('calc/index.html', _injectFavicon(calcResponse.body));
   print('Generated: calc/index.html');
 
-  // Copy static assets
+  // Copy static assets (CSS, images, favicons)
   await _copyAssets();
 
   print('SSG build complete!');
+}
+
+/// Inject favicon <link> tags into the <head> of rendered HTML
+String _injectFavicon(String html, {bool index = false}) {
+  final tags = index ? _faviconTagsIndex : _faviconTags;
+  return html.replaceFirst(
+    '<meta charset="utf-8"/>',
+    '<meta charset="utf-8"/>\n$tags',
+  );
 }
 
 Future<void> _writePage(String path, String html) async {
@@ -78,10 +101,49 @@ Future<void> _writePage(String path, String html) async {
 }
 
 Future<void> _copyAssets() async {
+  // CSS
   final cssFile = File('web/style.css');
   if (await cssFile.exists()) {
     final dest = File('build/style.css');
     await dest.parent.create(recursive: true);
     await cssFile.copy(dest.path);
+  }
+
+  // Astrites image
+  final astritesSrc = File('web/img/astrites.png');
+  if (await astritesSrc.exists()) {
+    final dest = File('build/img/astrites.png');
+    await dest.parent.create(recursive: true);
+    await astritesSrc.copy(dest.path);
+  }
+
+  // Banner image
+  final bannerSrc = File('web/img/denia-banner.jpg');
+  if (await bannerSrc.exists()) {
+    final dest = File('build/img/denia-banner.jpg');
+    await dest.parent.create(recursive: true);
+    await bannerSrc.copy(dest.path);
+  }
+
+  // Favicon files
+  final faviconFiles = [
+    'web/favicon.svg',
+    'web/favicon.ico',
+    'web/favicon-16.png',
+    'web/favicon-32.png',
+    'web/favicon-48.png',
+    'web/favicon-64.png',
+    'web/favicon-128.png',
+    'web/favicon-180.png',
+    'web/favicon-192.png',
+    'web/favicon-512.png',
+  ];
+  for (final path in faviconFiles) {
+    final src = File(path);
+    if (await src.exists()) {
+      final dest = File('build/${path.replaceFirst('web/', '')}');
+      await dest.parent.create(recursive: true);
+      await src.copy(dest.path);
+    }
   }
 }

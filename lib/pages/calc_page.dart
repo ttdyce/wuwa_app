@@ -1,7 +1,6 @@
 import 'package:jaspr/server.dart';
 import '../components/header.dart';
 import '../components/particles.dart';
-import '../models/article.dart';
 
 class CalcPage extends StatelessComponent {
   const CalcPage({super.key});
@@ -14,15 +13,13 @@ class CalcPage extends StatelessComponent {
       main_(classes: 'container calc-container', [
         a(href: '/', classes: 'back-link', [text('← 返回列表 BACK')]),
         div(classes: 'calc-card', [
-          h1(classes: 'calc-title', [text('💎 鳴潮抽卡計算器')]),
+          raw('<h1 class="calc-title"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon"/> 鳴潮抽數計算機</h1>'),
           p(classes: 'calc-subtitle', [text('Wuthering Waves Draw Calculator')]),
           div(classes: 'calc-divider', []),
 
           // Currency → Draws
           div(classes: 'calc-section', [
-            label(classes: 'calc-label', [
-              text('星聲 (Astrites) → 抽數'),
-            ]),
+            label(classes: 'calc-label', [text('星聲 → 抽數')]),
             div(classes: 'calc-row', [
               input([], type: InputType.number, classes: 'calc-input', id: 'astrites',
                 attributes: {
@@ -43,19 +40,17 @@ class CalcPage extends StatelessComponent {
 
           // Draws → Currency
           div(classes: 'calc-section', [
-            label(classes: 'calc-label', [
-              text('抽數 → 需要星聲 (支援算式)'),
-            ]),
+            label(classes: 'calc-label', [text('抽數 → 星聲')]),
             div(classes: 'calc-row', [
               input([], type: InputType.text, classes: 'calc-input', id: 'draws',
                 attributes: {
-                  'placeholder': '輸入抽數或算式 (e.g. 80+80)',
+                  'placeholder': '輸入抽數或算式 e.g. 80+160',
                   'oninput': 'calcAstrites()',
                 }),
               span(classes: 'calc-arrow', [text('→')]),
               div(classes: 'calc-result', [
                 span(classes: 'calc-result-num', id: 'astrites-from-draws', [text('0')]),
-                span(classes: 'calc-result-label', [text('💎')]),
+                raw('<span class="calc-result-label"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon-sm"/></span>'),
               ]),
             ]),
             div(classes: 'calc-helper-buttons', [
@@ -68,27 +63,34 @@ class CalcPage extends StatelessComponent {
 
           div(classes: 'calc-divider', []),
 
-          // Reference info
+          // Reference: Astrites → Draws
           div(classes: 'calc-ref', [
-            p(classes: 'calc-ref-title', [text('📊 換算參考')]),
-            div(classes: 'calc-ref-grid', [
-              div(classes: 'calc-ref-item', [
-                span(classes: 'calc-ref-val', [text('160')]),
-                span(classes: 'calc-ref-desc', [text('💎 = 1 抽')]),
-              ]),
-              div(classes: 'calc-ref-item', [
-                span(classes: 'calc-ref-val', [text('800')]),
-                span(classes: 'calc-ref-desc', [text('💎 = 5 抽')]),
-              ]),
-              div(classes: 'calc-ref-item', [
-                span(classes: 'calc-ref-val', [text('3,200')]),
-                span(classes: 'calc-ref-desc', [text('💎 = 20 抽')]),
-              ]),
-              div(classes: 'calc-ref-item', [
-                span(classes: 'calc-ref-val', [text('8,000')]),
-                span(classes: 'calc-ref-desc', [text('💎 = 50 抽')]),
-              ]),
+            raw('<p class="calc-ref-title"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> 換算參考</p>'),
+            div(classes: 'calc-ref-grid calc-ref-draws', [
+              _refItem('12,800', '80 抽'),
+              _refItem('25,600', '160 抽'),
+              _refItem('38,400', '(160+80) 抽'),
             ]),
+          ]),
+
+          div(classes: 'calc-divider', []),
+
+          // Reference: Money → Astrites
+          div(classes: 'calc-ref', [
+            p(classes: 'calc-ref-title', [text('💰 儲值參考 (HKD)')]),
+            div(classes: 'calc-ref-grid', [
+              _moneyItem('HK\$8', '60'),
+              _moneyItem('HK\$38', '300'),
+              _moneyItem('HK\$118', '980'),
+              _moneyItem('HK\$228', '1,980'),
+              _moneyItem('HK\$388', '3,280'),
+              _moneyItem('HK\$788', '6,480'),
+              _moneyItem('HK\$3,940', '32,400'),
+              _moneyItem('HK\$7,880', '64,800'),
+            ]),
+          ]),
+          p(classes: 'calc-note', [
+            raw('儲值價格來源：<a href="https://payment.kurogame-service.com/pay/wutheringwaves/cashier" target="_blank" rel="noopener">Kuro Games 官方儲值頁</a>'),
           ]),
         ]),
       ]),
@@ -109,30 +111,35 @@ function calcAstrites() {
     document.getElementById('astrites-from-draws').textContent = '0';
     return;
   }
-  
   try {
-    // Basic sanitization and evaluation for math
-    // Only allow numbers and ()+-*/.
     var sanitized = input.replace(/[^0-9+\\-*/(). ]/g, '');
     var result = eval(sanitized);
-    var v = parseInt(result) || 0;
+    var v = Math.floor(result) || 0;
     var astrites = v * 160;
     document.getElementById('astrites-from-draws').textContent = astrites.toLocaleString();
-  } catch (e) {
-    // If eval fails, just show 0 or keep previous
-  }
+  } catch (e) {}
 }
 
 function addDraws(n) {
   var el = document.getElementById('draws');
   var val = el.value.trim();
-  if (val) {
-    el.value = val + ' + ' + n;
-  } else {
-    el.value = n;
-  }
+  el.value = val ? val + ' + ' + n : n;
   calcAstrites();
 }
 </script>''');
+  }
+
+  Component _refItem(String val, String desc) {
+    return div(classes: 'calc-ref-item', [
+      span(classes: 'calc-ref-val', [text(val)]),
+      raw('<span class="calc-ref-desc"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> = $desc</span>'),
+    ]);
+  }
+
+  Component _moneyItem(String price, String astrites) {
+    return div(classes: 'calc-ref-item', [
+      span(classes: 'calc-ref-val', [text(price)]),
+      raw('<span class="calc-ref-desc">= $astrites <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>'),
+    ]);
   }
 }

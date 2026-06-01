@@ -16,6 +16,16 @@ class HomePage extends StatelessComponent {
       const Particles(),
       const Header(),
       main_(classes: 'container', [
+        // Hero banner
+        div(classes: 'hero-banner', [
+          div([], classes: 'hero-bg', attributes: {
+            'style': "background-image: url('/img/denia-banner.jpg')",
+          }),
+          div([], classes: 'hero-overlay'),
+          div(classes: 'hero-content', [
+            p(classes: 'hero-sub', [text('Denia — 2026.05.24')]),
+          ]),
+        ]),
         // Search bar
         div(classes: 'search-bar', [
           input([], type: InputType.text, classes: 'search-input', id: 'search',

@@ -15,7 +15,9 @@ class ArticleList extends StatelessComponent {
       // Pinned section
       if (pinned.isNotEmpty) ...[
         div(classes: 'section-label', [text('📌 置頂 PINNED')]),
-        ...pinned.map((a) => _buildCard(a)),
+        div(classes: 'pinned-grid', [
+          ...pinned.map((a) => _buildCard(a)),
+        ]),
       ],
       // Regular articles grouped by month
       ..._buildGrouped(regular),
@@ -35,6 +37,18 @@ class ArticleList extends StatelessComponent {
   }
 
   Component _buildCard(Article article) {
+    if (article.isPinned) {
+      return a(
+        href: '/article/${article.id}.html',
+        classes: 'pinned-card',
+        attributes: {'data-category': article.categoryLabel},
+        [
+          span(classes: 'pinned-pin', [text('📌')]),
+          span(classes: 'pinned-title', [text(article.title)]),
+          span(classes: 'pinned-date', [text(article.formattedDate)]),
+        ],
+      );
+    }
     return a(
       href: '/article/${article.id}.html',
       classes: 'article-card',
@@ -42,7 +56,6 @@ class ArticleList extends StatelessComponent {
       [
         div(classes: 'card-header', [
           span(classes: 'card-category', [text(article.categoryLabel)]),
-          if (article.isPinned) span(classes: 'card-pin', [text('📌')]),
         ]),
         h3(classes: 'card-title', [text(article.title)]),
         span(classes: 'card-date', [text(article.formattedDate)]),
