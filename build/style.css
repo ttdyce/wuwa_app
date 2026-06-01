@@ -137,7 +137,8 @@ body::before {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .logo-link {
@@ -305,6 +306,122 @@ body::before {
 .filter-btn span {
   position: relative;
   z-index: 1;
+}
+
+/* ---------- Hero Banner ---------- */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 25%;
+  filter: brightness(0.55) saturate(1.15);
+  transition: transform 8s ease;
+}
+
+.hero-banner:hover .hero-bg {
+  transform: scale(1.03);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5,8,16,0.1) 0%, rgba(5,8,16,0.6) 70%, rgba(5,8,16,0.95) 100%),
+    linear-gradient(90deg, rgba(5,8,16,0.5) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.25rem;
+}
+
+.hero-sub {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+/* ---------- Pinned Card (compact 1-row) ---------- */
+.pinned-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.pinned-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  transition: var(--transition);
+  text-decoration: none;
+  min-width: 0;
+}
+
+.pinned-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.pinned-pin {
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.pinned-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+  transition: color var(--transition);
+}
+
+.pinned-card:hover .pinned-title {
+  color: var(--accent-bright);
+}
+
+.pinned-date {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Section Label ---------- */
@@ -705,7 +822,16 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
 }
+
+/* Astrites icon sizes */
+.astrites-icon    { height: 1.4em; vertical-align: -0.2em; }
+.astrites-icon-sm { height: 1.5em; vertical-align: -0.2em; }
+.astrites-icon-xs { height: 0.9em; vertical-align: -0.1em; }
 
 .calc-subtitle {
   text-align: center;
@@ -872,6 +998,26 @@ body::before {
   color: var(--text-secondary);
 }
 
+.calc-note {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.calc-note a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  transition: var(--transition);
+}
+
+.calc-note a:hover {
+  border-bottom-color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .calc-card { padding: 1.75rem 1.25rem; }
   .calc-row { flex-wrap: wrap; gap: 0.75rem; }
@@ -879,4 +1025,9 @@ body::before {
   .calc-arrow { display: none; }
   .calc-result { width: 100%; }
   .calc-ref-grid { grid-template-columns: 1fr; }
+  .hero-banner { height: 200px; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-content { padding: 1rem 1.25rem; }
+  .pinned-grid { grid-template-columns: 1fr; }
+  .pinned-title { font-size: 0.8rem; }
 }

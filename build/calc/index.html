@@ -3,6 +3,10 @@
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
+    <meta name="theme-color" content="#0a0e1a"/>
     <style>@import url(../style.css);</style>
     <!--$-->
     <title>抽卡計算器 — wuwa.app</title>
@@ -31,23 +35,23 @@
       <header class="site-header">
         <div class="header-inner">
           <a class="logo-link" href="/">
-            <span class="logo-icon">🌊</span>
+            <span class="logo-icon">🫧</span>
             <span class="logo-text">WUWA</span>
             <span class="logo-dot">.</span>
             <span class="logo-ext">app</span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算器</a></nav>
-          <span class="header-subtitle">鳴潮 NEWS HUB</span>
+          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
+          <span class="header-subtitle"></span>
         </div>
       </header>
       <main class="container calc-container">
         <a class="back-link" href="/">← 返回列表 BACK</a>
         <div class="calc-card">
-          <h1 class="calc-title">💎 鳴潮抽卡計算器</h1>
+          <h1 class="calc-title"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon"/> 鳴潮抽數計算機</h1>
           <p class="calc-subtitle">Wuthering Waves Draw Calculator</p>
           <div class="calc-divider"></div>
           <div class="calc-section">
-            <label class="calc-label">星聲 (Astrites) → 抽數</label>
+            <label class="calc-label">星聲 → 抽數</label>
             <div class="calc-row">
               <input id="astrites" class="calc-input" placeholder="輸入星聲數量" oninput="calcDraws()" min="0" type="number"/>
               <span class="calc-arrow">→</span>
@@ -60,13 +64,13 @@
           </div>
           <div class="calc-divider"></div>
           <div class="calc-section">
-            <label class="calc-label">抽數 → 需要星聲 (支援算式)</label>
+            <label class="calc-label">抽數 → 星聲</label>
             <div class="calc-row">
-              <input id="draws" class="calc-input" placeholder="輸入抽數或算式 (e.g. 80+80)" oninput="calcAstrites()" type="text"/>
+              <input id="draws" class="calc-input" placeholder="輸入抽數或算式 e.g. 80+160" oninput="calcAstrites()" type="text"/>
               <span class="calc-arrow">→</span>
               <div class="calc-result">
                 <span id="astrites-from-draws" class="calc-result-num">0</span>
-                <span class="calc-result-label">💎</span>
+                <span class="calc-result-label"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon-sm"/></span>
               </div>
             </div>
             <div class="calc-helper-buttons">
@@ -78,14 +82,63 @@
           </div>
           <div class="calc-divider"></div>
           <div class="calc-ref">
-            <p class="calc-ref-title">📊 換算參考</p>
-            <div class="calc-ref-grid">
-              <div class="calc-ref-item"><span class="calc-ref-val">160</span><span class="calc-ref-desc">💎 = 1 抽</span></div>
-              <div class="calc-ref-item"><span class="calc-ref-val">800</span><span class="calc-ref-desc">💎 = 5 抽</span></div>
-              <div class="calc-ref-item"><span class="calc-ref-val">3,200</span><span class="calc-ref-desc">💎 = 20 抽</span></div>
-              <div class="calc-ref-item"><span class="calc-ref-val">8,000</span><span class="calc-ref-desc">💎 = 50 抽</span></div>
+            <p class="calc-ref-title"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> 換算參考</p>
+            <div class="calc-ref-grid calc-ref-draws">
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">12,800</span>
+                <span class="calc-ref-desc"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> = 80 抽</span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">25,600</span>
+                <span class="calc-ref-desc"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> = 160 抽</span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">38,400</span>
+                <span class="calc-ref-desc"><img src="/img/astrites.png" alt="" class="astrites-icon-xs"/> = (160+80) 抽</span>
+              </div>
             </div>
           </div>
+          <div class="calc-divider"></div>
+          <div class="calc-ref">
+            <p class="calc-ref-title">💰 儲值參考 (HKD)</p>
+            <div class="calc-ref-grid">
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$8</span>
+                <span class="calc-ref-desc">= 60 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$38</span>
+                <span class="calc-ref-desc">= 300 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$118</span>
+                <span class="calc-ref-desc">= 980 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$228</span>
+                <span class="calc-ref-desc">= 1,980 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$388</span>
+                <span class="calc-ref-desc">= 3,280 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$788</span>
+                <span class="calc-ref-desc">= 6,480 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$3,940</span>
+                <span class="calc-ref-desc">= 32,400 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+              <div class="calc-ref-item">
+                <span class="calc-ref-val">HK$7,880</span>
+                <span class="calc-ref-desc">= 64,800 <img src="/img/astrites.png" alt="" class="astrites-icon-xs"/></span>
+              </div>
+            </div>
+          </div>
+          <p class="calc-note">
+            儲值價格來源：<a href="https://payment.kurogame-service.com/pay/wutheringwaves/cashier" target="_blank" rel="noopener">Kuro Games 官方儲值頁</a>
+          </p>
         </div>
       </main>
       <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
@@ -103,28 +156,19 @@
         document.getElementById('astrites-from-draws').textContent = '0';
         return;
       }
-      
       try {
-        // Basic sanitization and evaluation for math
-        // Only allow numbers and ()+-*/.
         var sanitized = input.replace(/[^0-9+\-*/(). ]/g, '');
         var result = eval(sanitized);
-        var v = parseInt(result) || 0;
+        var v = Math.floor(result) || 0;
         var astrites = v * 160;
         document.getElementById('astrites-from-draws').textContent = astrites.toLocaleString();
-      } catch (e) {
-        // If eval fails, just show 0 or keep previous
-      }
+      } catch (e) {}
     }
     
     function addDraws(n) {
       var el = document.getElementById('draws');
       var val = el.value.trim();
-      if (val) {
-        el.value = val + ' + ' + n;
-      } else {
-        el.value = n;
-      }
+      el.value = val ? val + ' + ' + n : n;
       calcAstrites();
     }
     </script>

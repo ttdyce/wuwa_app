@@ -3,6 +3,11 @@
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
+    <meta name="theme-color" content="#0a0e1a"/>
     <style>@import url(style.css);</style>
     <!--$-->
     <title>wuwa.app — Wuthering Waves News</title>
@@ -31,16 +36,21 @@
       <header class="site-header">
         <div class="header-inner">
           <a class="logo-link" href="/">
-            <span class="logo-icon">🌊</span>
+            <span class="logo-icon">🫧</span>
             <span class="logo-text">WUWA</span>
             <span class="logo-dot">.</span>
             <span class="logo-ext">app</span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算器</a></nav>
-          <span class="header-subtitle">鳴潮 NEWS HUB</span>
+          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
+          <span class="header-subtitle"></span>
         </div>
       </header>
       <main class="container">
+        <div class="hero-banner">
+          <div class="hero-bg" style="background-image: url('/img/denia-banner.jpg')"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content"><p class="hero-sub">Denia — 2026.05.24</p></div>
+        </div>
         <div class="search-bar">
           <input id="search" class="search-input" placeholder="搜尋新聞..." oninput="filterArticles()" type="text"/>
           <span class="search-icon">🔍</span>
@@ -53,16 +63,18 @@
         </div>
         <div class="article-list">
           <div class="section-label">📌 置頂 PINNED</div>
-          <a class="article-card" data-category="公告" href="/article/1857.html">
-            <div class="card-header"><span class="card-category">公告</span><span class="card-pin">📌</span></div>
-            <h3 class="card-title">常見問題FAQ - PlayStation®5</h3>
-            <span class="card-date">2025.01.06</span>
-          </a>
-          <a class="article-card" data-category="公告" href="/article/764.html">
-            <div class="card-header"><span class="card-category">公告</span><span class="card-pin">📌</span></div>
-            <h3 class="card-title">喚取詳情</h3>
-            <span class="card-date">2024.05.23</span>
-          </a>
+          <div class="pinned-grid">
+            <a class="pinned-card" data-category="公告" href="/article/1857.html">
+              <span class="pinned-pin">📌</span>
+              <span class="pinned-title">常見問題FAQ - PlayStation®5</span>
+              <span class="pinned-date">2025.01.06</span>
+            </a>
+            <a class="pinned-card" data-category="公告" href="/article/764.html">
+              <span class="pinned-pin">📌</span>
+              <span class="pinned-title">喚取詳情</span>
+              <span class="pinned-date">2024.05.23</span>
+            </a>
+          </div>
           <div class="month-header">2026年6月</div>
           <a class="article-card" data-category="公告" href="/article/4771.html">
             <div class="card-header"><span class="card-category">公告</span></div>
