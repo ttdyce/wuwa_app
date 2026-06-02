@@ -208,6 +208,18 @@ body::before {
   background: rgba(201, 168, 76, 0.1);
 }
 
+.header-github-link {
+  margin-left: auto;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.header-github-link:hover {
+  color: var(--text-primary);
+}
+
 /* ---------- Container ---------- */
 .container {
   max-width: 1000px;
