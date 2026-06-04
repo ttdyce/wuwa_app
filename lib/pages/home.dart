@@ -3,18 +3,55 @@ import '../components/header.dart';
 import '../components/particles.dart';
 import '../components/category_filter.dart';
 import '../components/article_list.dart';
+import '../components/patch_timeline.dart';
 import '../models/article.dart';
 
 class HomePage extends StatelessComponent {
   final List<Article> articles;
+  final String buildTime;
+  final List<PatchInfo> patches;
 
-  const HomePage({super.key, required this.articles});
+  const HomePage({
+    super.key,
+    required this.articles,
+    required this.buildTime,
+    required this.patches,
+  });
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    // Determine current & next patch from build time
+    final now = DateTime.parse(buildTime);
+    PatchInfo? currentPatch;
+    PatchInfo? nextPatch;
+    for (var i = 0; i < patches.length; i++) {
+      if (!patches[i].date.isAfter(now)) {
+        currentPatch = patches[i];
+        nextPatch = (i + 1 < patches.length) ? patches[i + 1] : null;
+      }
+    }
+
+    // Calculate progress between current and next patch
+    double progress = 0.5;
+    String nextDateIso = '';
+    if (currentPatch != null && nextPatch != null) {
+      final total = nextPatch.date.difference(currentPatch.date).inSeconds;
+      final elapsed = now.difference(currentPatch.date).inSeconds;
+      progress = total > 0 ? (elapsed / total).clamp(0.0, 1.0) : 0.5;
+      nextDateIso = nextPatch.date.toUtc().toIso8601String();
+    }
+
     yield div(classes: 'app', [
       const Particles(),
       const Header(),
+      // Patch timeline below nav bar
+      if (currentPatch != null && nextPatch != null)
+        PatchTimeline(
+          current: currentPatch,
+          next: nextPatch,
+          progressPercent: progress,
+          nextDateIso: nextDateIso,
+        ),
       main_(classes: 'container', [
         // Hero banner
         div(classes: 'hero-banner', [
@@ -35,6 +72,7 @@ class HomePage extends StatelessComponent {
             }),
           span(classes: 'search-icon', [text('🔍')]),
           span(classes: 'search-count', [text('${articles.length} 則新聞')]),
+          span(classes: 'build-info', [text('最後更新 $buildTime UTC+8')]),
         ]),
         // Category filter
         const CategoryFilter(),

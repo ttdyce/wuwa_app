@@ -276,6 +276,110 @@ body::before {
   font-size: 0.8rem;
 }
 
+.build-info {
+  display: block;
+  text-align: right;
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.35rem;
+  opacity: 0.6;
+}
+
+/* ---------- Patch Timeline ---------- */
+.patch-timeline {
+  width: 100%;
+  padding: 0.6rem 0 0.5rem;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.patch-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+  padding: 0 2rem;
+}
+
+.patch-label-left,
+.patch-label-right {
+  display: flex;
+  gap: 0.35rem;
+  align-items: baseline;
+  min-width: 0;
+}
+
+.patch-label-right {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+.patch-version {
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.patch-name {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.patch-countdown {
+  font-size: 0.72rem;
+  color: var(--accent-bright);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.patch-track {
+  position: relative;
+  height: 5px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: visible;
+  margin: 0 2rem;
+}
+
+.patch-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  border-radius: 2px;
+}
+
+.patch-marker {
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: var(--accent-bright);
+  border: 1.5px solid var(--bg-deep);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px var(--accent-glow-strong);
+}
+
+.patch-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+  padding: 0 2rem;
+}
+
 /* ---------- Category Filter ---------- */
 .category-filter {
   display: flex;
@@ -781,15 +885,112 @@ body::before {
 .article-card:nth-child(9)  { animation-delay: 0.18s; }
 .article-card:nth-child(10) { animation-delay: 0.20s; }
 
+/* ---------- Gallery (一圖流) ---------- */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-bright), var(--accent), #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.35rem;
+}
+
+.gallery-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.gallery-img-link {
+  display: block;
+  line-height: 0;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.015);
+}
+
+.gallery-card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.15rem;
+}
+
+.gallery-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gallery-card-date {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
+  /* Mobile header: compact layout */
+  .site-header { padding: 0 0.75rem; height: 52px; }
+  .header-inner { gap: 0.5rem; }
+  .logo-icon { font-size: 1.2rem; margin-right: 0.2rem; }
+  .logo-text { font-size: 1.1rem; }
+  .logo-ext { font-size: 0.75em; }
   .header-subtitle { display: none; }
+  .header-nav { gap: 0.1rem; }
+  .header-nav-link { font-size: 0.78rem; padding: 0.3rem 0.55rem; }
+  .header-github-link svg { width: 18px; height: 18px; }
+
   .container { padding: 1.25rem 1rem; }
   .article-header .article-title { font-size: 1.35rem; }
   .article-card { padding: 1rem 1.15rem; }
   .article-card:hover { transform: translateX(3px); }
   .category-filter { gap: 0.4rem; }
   .filter-btn { padding: 0.45rem 0.9rem; font-size: 0.8rem; }
+
+  /* Patch timeline — mobile */
+  .patch-labels { padding: 0 1rem; }
+  .patch-label-left, .patch-label-right { gap: 0.25rem; }
+  .patch-label-right { flex-direction: row; }
+  .patch-version { font-size: 0.7rem; }
+  .patch-name { font-size: 0.65rem; max-width: 100px; }
+  .patch-countdown { font-size: 0.68rem; }
+  .patch-track { margin: 0 1rem; height: 4px; }
+  .patch-marker { width: 8px; height: 8px; }
+  .patch-dates { padding: 0 1rem; font-size: 0.5rem; }
 }
 
 /* ---------- Scrollbar ---------- */
@@ -1050,4 +1251,7 @@ body::before {
   .hero-content { padding: 1rem 1.25rem; }
   .pinned-grid { grid-template-columns: 1fr; }
   .pinned-title { font-size: 0.8rem; }
+  .gallery-title { font-size: 1.5rem; }
+  .gallery-card-info { padding: 0.65rem 0.9rem; }
+  .gallery-card-title { font-size: 0.85rem; }
 }

@@ -7,6 +7,7 @@ import 'models/article.dart';
 import 'pages/home.dart';
 import 'pages/article_page.dart';
 import 'pages/calc_page.dart';
+import 'components/patch_timeline.dart';
 
 /// Favicon link tags injected into every HTML <head>
 const _faviconTags = '''
@@ -40,6 +41,13 @@ void main() async {
 
   print('Loaded ${articles.length} articles for SSG');
 
+  // Capture build timestamp (UTC+8, ISO 8601)
+  final buildTime = DateTime.now().toUtc().add(const Duration(hours: 8)).toIso8601String().replaceFirst('T', ' ').replaceFirst(RegExp(r'\.\d+Z$'), '').replaceFirst('Z', '');
+
+  // Extract patch schedule from version info articles
+  final patches = _extractPatches(articles);
+  print('Detected ${patches.length} patches: ${patches.map((p) => '${p.version} (${p.date.month}/${p.date.day})').join(', ')}');
+
   // Create build directory
   final buildDir = Directory('build');
   if (await buildDir.exists()) {
@@ -50,7 +58,7 @@ void main() async {
   final homeApp = Document(
     title: 'wuwa.app — Wuthering Waves News',
     styles: [StyleRule.import('style.css')],
-    body: HomePage(articles: articles),
+    body: HomePage(articles: articles, buildTime: buildTime, patches: patches),
   );
 
   final homeResponse = await renderComponent(homeApp);
@@ -146,4 +154,48 @@ Future<void> _copyAssets() async {
       await src.copy(dest.path);
     }
   }
+}
+
+/// Extract patch schedule from version info articles.
+/// Looks for articles with "版本資訊" in title that contain "X月X日即將更新".
+List<PatchInfo> _extractPatches(List<Article> articles) {
+  final result = <PatchInfo>[];
+  final seen = <String>{};
+
+  for (final a in articles) {
+    if (!a.title.contains('版本資訊') && !a.title.contains('版本前瞻')) continue;
+
+    // Extract version number: "3.3版本" → "v3.3"
+    final vMatch = RegExp(r'(\d+\.\d+)版本').firstMatch(a.title);
+    if (vMatch == null) continue;
+    final version = 'v${vMatch.group(1)}';
+    if (seen.contains(version)) continue;
+    seen.add(version);
+
+    // Extract name: between「…」
+    final nameMatch = RegExp(r'「([^」]+)」').firstMatch(a.title);
+    final name = nameMatch?.group(1) ?? '';
+
+    // Extract date: "X月X日"
+    final dMatch = RegExp(r'(\d+)月(\d+)日').firstMatch(a.title);
+    if (dMatch == null) continue;
+
+    // Use article year (start of the article) to resolve the date.
+    // The month/day comes from the title; year from article start time.
+    final month = int.parse(dMatch.group(1)!);
+    final day = int.parse(dMatch.group(2)!);
+    // If title month < article month, the patch is next year (edge case).
+    var year = a.startTime.year;
+    if (month < a.startTime.month) year++;
+
+    result.add(PatchInfo(
+      version: version,
+      name: name,
+      date: DateTime(year, month, day),
+    ));
+  }
+
+  // Sort ascending by date
+  result.sort((a, b) => a.date.compareTo(b.date));
+  return result;
 }
