@@ -48,45 +48,6 @@
           </a>
         </div>
       </header>
-      <div class="patch-timeline">
-        <div class="patch-labels">
-          <div class="patch-label-left"><span class="patch-version">v3.3</span><span class="patch-name">自星海盡處迴響</span></div>
-          <div class="patch-countdown" data-target="2026-06-08T00:00:00.000Z" id="patch-countdown">計算中…</div>
-          <div class="patch-label-right"><span class="patch-version">v3.4</span><span class="patch-name">未選擇的夢</span></div>
-        </div>
-        <div class="patch-track">
-          <div class="patch-bar" style="width: 99.8%"></div>
-          <div class="patch-marker" style="left: 99.8%"></div>
-        </div>
-        <div class="patch-dates"><span>2026.04.30</span><span>2026.06.08</span></div>
-        <script>
-        (function() {
-          var el = document.getElementById('patch-countdown');
-          if (!el) return;
-          var target = new Date(el.getAttribute('data-target')).getTime();
-          if (isNaN(target)) return;
-        
-          function pad(n) { return n < 10 ? '0' + n : n; }
-        
-          function tick() {
-            var now = Date.now();
-            var diff = target - now;
-            if (diff <= 0) {
-              el.textContent = '已更新';
-              return;
-            }
-            var d = Math.floor(diff / 86400000);
-            var h = Math.floor((diff % 86400000) / 3600000);
-            var m = Math.floor((diff % 3600000) / 60000);
-            var s = Math.floor((diff % 60000) / 1000);
-            el.textContent = d + '天 ' + pad(h) + '時 ' + pad(m) + '分 ' + pad(s) + '秒';
-          }
-        
-          tick();
-          setInterval(tick, 1000);
-        })();
-        </script>
-      </div>
       <main class="container">
         <div class="hero-banner">
           <div class="hero-bg" style="background-image: url('/img/denia-banner.jpg')"></div>
@@ -96,8 +57,8 @@
         <div class="search-bar">
           <input id="search" class="search-input" placeholder="搜尋新聞..." oninput="filterArticles()" type="text"/>
           <span class="search-icon">🔍</span>
-          <span class="search-count">524 則新聞</span>
-          <span class="build-info">最後更新 2026-06-07 21:43:33 UTC+8</span>
+          <span class="search-count">526 則新聞</span>
+          <span class="build-info">最後更新 2026-06-08 13:46:38 UTC+8</span>
         </div>
         <div class="category-filter">
           <button class="filter-btn active" data-filter="all" onclick="setFilter(this)"><span>全部</span></button>
@@ -119,6 +80,16 @@
             </a>
           </div>
           <div class="month-header">2026年6月</div>
+          <a class="article-card" data-category="公告" href="/article/4741.html">
+            <div class="card-header"><span class="card-category">公告</span></div>
+            <h3 class="card-title">鳴潮 × Mycard 未選擇的夢</h3>
+            <span class="card-date">2026.06.08</span>
+          </a>
+          <a class="article-card" data-category="公告" href="/article/4788.html">
+            <div class="card-header"><span class="card-category">公告</span></div>
+            <h3 class="card-title">「未選擇的夢」3.4版本內容說明</h3>
+            <span class="card-date">2026.06.08</span>
+          </a>
           <a class="article-card" data-category="公告" href="/article/4781.html">
             <div class="card-header"><span class="card-category">公告</span></div>
             <h3 class="card-title">活動預告 | &lt;深墜異想奇境・尋夢者&gt; 限時戰鬥活動即將開啟！</h3>
@@ -1033,14 +1004,14 @@
             <h3 class="card-title">《寰宇人類注疏：群星交錯》共鳴者展示 | 尤諾</h3>
             <span class="card-date">2025.09.12</span>
           </a>
-          <a class="article-card" data-category="公告" href="/article/3196.html">
-            <div class="card-header"><span class="card-category">公告</span></div>
-            <h3 class="card-title">鳴潮 × Mycard 日以灼鋒，月以流明</h3>
-            <span class="card-date">2025.09.10</span>
-          </a>
           <a class="article-card" data-category="公告" href="/article/3229.html">
             <div class="card-header"><span class="card-category">公告</span></div>
             <h3 class="card-title">[回音盈域]養成材料限時雙倍活動</h3>
+            <span class="card-date">2025.09.10</span>
+          </a>
+          <a class="article-card" data-category="公告" href="/article/3196.html">
+            <div class="card-header"><span class="card-category">公告</span></div>
+            <h3 class="card-title">鳴潮 × Mycard 日以灼鋒，月以流明</h3>
             <span class="card-date">2025.09.10</span>
           </a>
           <a class="article-card" data-category="公告" href="/article/3222.html">
@@ -1886,14 +1857,14 @@
             <h3 class="card-title">[聲弦滌蕩]聲骸材料限時雙倍活動</h3>
             <span class="card-date">2025.01.15</span>
           </a>
-          <a class="article-card" data-category="活動" href="/article/1834.html">
-            <div class="card-header"><span class="card-category">活動</span></div>
-            <h3 class="card-title">鳴潮 × Mycard 新春聯促活動</h3>
-            <span class="card-date">2025.01.15</span>
-          </a>
           <a class="article-card" data-category="公告" href="/article/1974.html">
             <div class="card-header"><span class="card-category">公告</span></div>
             <h3 class="card-title">[潮汐覓聞]限時勘察活動——氤柔水境特別勘察</h3>
+            <span class="card-date">2025.01.15</span>
+          </a>
+          <a class="article-card" data-category="活動" href="/article/1834.html">
+            <div class="card-header"><span class="card-category">活動</span></div>
+            <h3 class="card-title">鳴潮 × Mycard 新春聯促活動</h3>
             <span class="card-date">2025.01.15</span>
           </a>
           <a class="article-card" data-category="公告" href="/article/1966.html">
