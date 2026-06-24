@@ -92,6 +92,23 @@ class CalcPage extends StatelessComponent {
           p(classes: 'calc-note', [
             raw('儲值價格來源：<a href="https://payment.kurogame-service.com/pay/wutheringwaves/cashier" target="_blank" rel="noopener">Kuro Games 官方儲值頁</a>'),
           ]),
+
+          div(classes: 'calc-divider', []),
+
+          // Cost per draw reference
+          div(classes: 'calc-cost-per-draw', [
+            p(classes: 'calc-ref-title', [text('💸 每抽成本')]),
+            div(classes: 'calc-cost-grid', [
+              div(classes: 'calc-cost-item calc-cost-worst', [
+                span(classes: 'calc-cost-label', [text('最貴（小額儲值）')]),
+                span(classes: 'calc-cost-val', [text(r'≈ HK$20 / 抽')]),
+              ]),
+              div(classes: 'calc-cost-item calc-cost-best', [
+                span(classes: 'calc-cost-label', [text('小月卡')]),
+                span(classes: 'calc-cost-val', [text(r'≈ HK$2 / 抽')]),
+              ]),
+            ]),
+          ]),
         ]),
       ]),
       footer(classes: 'footer', [
