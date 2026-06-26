@@ -48,6 +48,45 @@
           </a>
         </div>
       </header>
+      <div class="patch-timeline">
+        <div class="patch-labels">
+          <div class="patch-label-left"><span class="patch-version">v3.4</span><span class="patch-name">未選擇的夢</span></div>
+          <div class="patch-countdown" data-target="2026-07-10T00:00:00.000Z" id="patch-countdown">計算中…</div>
+          <div class="patch-label-right"><span class="patch-version">v3.5</span><span class="patch-name">遺音扶劍，蕩夢而歌</span></div>
+        </div>
+        <div class="patch-track">
+          <div class="patch-bar" style="width: 59.1%"></div>
+          <div class="patch-marker" style="left: 59.1%"></div>
+        </div>
+        <div class="patch-dates"><span>2026.06.08</span><span>2026.07.10</span></div>
+        <script>
+        (function() {
+          var el = document.getElementById('patch-countdown');
+          if (!el) return;
+          var target = new Date(el.getAttribute('data-target')).getTime();
+          if (isNaN(target)) return;
+        
+          function pad(n) { return n < 10 ? '0' + n : n; }
+        
+          function tick() {
+            var now = Date.now();
+            var diff = target - now;
+            if (diff <= 0) {
+              el.textContent = '已更新';
+              return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            el.textContent = d + '天 ' + pad(h) + '時 ' + pad(m) + '分 ' + pad(s) + '秒';
+          }
+        
+          tick();
+          setInterval(tick, 1000);
+        })();
+        </script>
+      </div>
       <main class="container">
         <div class="hero-banner">
           <div class="hero-bg" style="background-image: url('/img/denia-banner.jpg')"></div>
@@ -57,8 +96,8 @@
         <div class="search-bar">
           <input id="search" class="search-input" placeholder="搜尋新聞..." oninput="filterArticles()" type="text"/>
           <span class="search-icon">🔍</span>
-          <span class="search-count">539 則新聞</span>
-          <span class="build-info">最後更新 2026-06-26 13:30:04 UTC+8</span>
+          <span class="search-count">540 則新聞</span>
+          <span class="build-info">最後更新 2026-06-26 21:52:42 UTC+8</span>
         </div>
         <div class="category-filter">
           <button class="filter-btn active" data-filter="all" onclick="setFilter(this)"><span>全部</span></button>
@@ -80,6 +119,11 @@
             </a>
           </div>
           <div class="month-header">2026年6月</div>
+          <a class="article-card" data-category="公告" href="/article/4933.html">
+            <div class="card-header"><span class="card-category">公告</span></div>
+            <h3 class="card-title">《鳴潮》版本前瞻 | 3.5版本「遺音扶劍，蕩夢而歌」7月10日即將更新</h3>
+            <span class="card-date">2026.06.26</span>
+          </a>
           <a class="article-card" data-category="公告" href="/article/4932.html">
             <div class="card-header"><span class="card-category">公告</span></div>
             <h3 class="card-title">桌布分享 | 外勤任務?我喜歡~</h3>
