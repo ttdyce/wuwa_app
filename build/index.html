@@ -51,28 +51,38 @@
       <div class="patch-timeline">
         <div class="patch-labels">
           <div class="patch-label-left"><span class="patch-version">v3.4</span><span class="patch-name">未選擇的夢</span></div>
-          <div class="patch-countdown" data-target="2026-07-10T00:00:00.000Z" id="patch-countdown">計算中…</div>
+          <div class="patch-countdown" data-current="2026-06-07T16:00:00.000Z" data-target="2026-07-09T16:00:00.000Z" id="patch-countdown">計算中…</div>
           <div class="patch-label-right"><span class="patch-version">v3.5</span><span class="patch-name">遺音扶劍，蕩夢而歌</span></div>
         </div>
-        <div class="patch-track">
-          <div class="patch-bar" style="width: 78.0%"></div>
-          <div class="patch-marker" style="left: 78.0%"></div>
+        <div class="patch-track" id="patch-track">
+          <div class="patch-bar" id="patch-bar" style="width: 0%"></div>
+          <div class="patch-marker" id="patch-marker" style="left: 0%"></div>
         </div>
         <div class="patch-dates"><span>2026.06.08</span><span>2026.07.10</span></div>
         <script>
         (function() {
           var el = document.getElementById('patch-countdown');
+          var bar = document.getElementById('patch-bar');
+          var marker = document.getElementById('patch-marker');
           if (!el) return;
+        
+          var start = new Date(el.getAttribute('data-current')).getTime();
           var target = new Date(el.getAttribute('data-target')).getTime();
-          if (isNaN(target)) return;
+          if (isNaN(start) || isNaN(target) || target <= start) return;
+        
+          var total = target - start;
         
           function pad(n) { return n < 10 ? '0' + n : n; }
         
           function tick() {
             var now = Date.now();
+        
+            // countdown
             var diff = target - now;
             if (diff <= 0) {
               el.textContent = '已更新';
+              if (bar) bar.style.width = '100%';
+              if (marker) marker.style.left = '100%';
               return;
             }
             var d = Math.floor(diff / 86400000);
@@ -80,6 +90,11 @@
             var m = Math.floor((diff % 3600000) / 60000);
             var s = Math.floor((diff % 60000) / 1000);
             el.textContent = d + '天 ' + pad(h) + '時 ' + pad(m) + '分 ' + pad(s) + '秒';
+        
+            // progress bar
+            var pct = Math.min(((now - start) / total) * 100, 100);
+            if (bar) bar.style.width = pct + '%';
+            if (marker) marker.style.left = pct + '%';
           }
         
           tick();
@@ -97,7 +112,7 @@
           <input id="search" class="search-input" placeholder="搜尋新聞..." oninput="filterArticles()" type="text"/>
           <span class="search-icon">🔍</span>
           <span class="search-count">542 則新聞</span>
-          <span class="build-info">最後更新 2026-07-02 23:15:09 UTC+8</span>
+          <span class="build-info">最後更新 2026-07-03 01:03:42 UTC+8</span>
         </div>
         <div class="category-filter">
           <button class="filter-btn active" data-filter="all" onclick="setFilter(this)"><span>全部</span></button>

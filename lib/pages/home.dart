@@ -31,13 +31,11 @@ class HomePage extends StatelessComponent {
       }
     }
 
-    // Calculate progress between current and next patch
-    double progress = 0.5;
+    // Prepare ISO dates for real-time JS countdown + bar
+    String currentDateIso = '';
     String nextDateIso = '';
     if (currentPatch != null && nextPatch != null) {
-      final total = nextPatch.date.difference(currentPatch.date).inSeconds;
-      final elapsed = now.difference(currentPatch.date).inSeconds;
-      progress = total > 0 ? (elapsed / total).clamp(0.0, 1.0) : 0.5;
+      currentDateIso = currentPatch.date.toUtc().toIso8601String();
       nextDateIso = nextPatch.date.toUtc().toIso8601String();
     }
 
@@ -49,7 +47,7 @@ class HomePage extends StatelessComponent {
         PatchTimeline(
           current: currentPatch,
           next: nextPatch,
-          progressPercent: progress,
+          currentDateIso: currentDateIso,
           nextDateIso: nextDateIso,
         ),
       main_(classes: 'container', [
