@@ -37,13 +37,16 @@ class HomePage extends StatelessComponent {
     if (currentPatch != null && nextPatch != null) {
       currentDateIso = currentPatch.date.toUtc().toIso8601String();
       nextDateIso = nextPatch.date.toUtc().toIso8601String();
+    } else if (currentPatch != null) {
+      // No next patch announced — show 100% (fully through current patch)
+      progress = 1.0;
     }
 
     yield div(classes: 'app', [
       const Particles(),
       const Header(),
       // Patch timeline below nav bar
-      if (currentPatch != null && nextPatch != null)
+      if (currentPatch != null)
         PatchTimeline(
           current: currentPatch,
           next: nextPatch,
