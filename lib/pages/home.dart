@@ -31,15 +31,14 @@ class HomePage extends StatelessComponent {
       }
     }
 
-    // Prepare ISO dates for real-time JS countdown + bar
-    String currentDateIso = '';
+    // Prepare ISO dates and progress for patch timeline
+    double progressPercent = 1.0;
     String nextDateIso = '';
     if (currentPatch != null && nextPatch != null) {
-      currentDateIso = currentPatch.date.toUtc().toIso8601String();
       nextDateIso = nextPatch.date.toUtc().toIso8601String();
-    } else if (currentPatch != null) {
-      // No next patch announced — show 100% (fully through current patch)
-      progress = 1.0;
+      final total = nextPatch.date.difference(currentPatch.date).inMilliseconds;
+      final elapsed = now.difference(currentPatch.date).inMilliseconds;
+      progressPercent = total > 0 ? (elapsed / total).clamp(0.0, 1.0) : 1.0;
     }
 
     yield div(classes: 'app', [
@@ -50,7 +49,7 @@ class HomePage extends StatelessComponent {
         PatchTimeline(
           current: currentPatch,
           next: nextPatch,
-          currentDateIso: currentDateIso,
+          progressPercent: progressPercent,
           nextDateIso: nextDateIso,
         ),
       main_(classes: 'container', [

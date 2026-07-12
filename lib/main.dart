@@ -41,8 +41,11 @@ void main() async {
 
   print('Loaded ${articles.length} articles for SSG');
 
-  // Capture build timestamp (UTC+8, ISO 8601)
-  final buildTime = DateTime.now().toUtc().add(const Duration(hours: 8)).toIso8601String().replaceFirst('T', ' ').replaceFirst(RegExp(r'\.\d+Z$'), '').replaceFirst('Z', '');
+  // Capture build timestamp in UTC+8
+  final nowUtc8 = DateTime.now().toUtc().add(const Duration(hours: 8));
+  final buildTime =
+      '${nowUtc8.year}-${nowUtc8.month.toString().padLeft(2, '0')}-${nowUtc8.day.toString().padLeft(2, '0')} '
+      '${nowUtc8.hour.toString().padLeft(2, '0')}:${nowUtc8.minute.toString().padLeft(2, '0')}:${nowUtc8.second.toString().padLeft(2, '0')}';
 
   // Extract patch schedule from version info articles
   final patches = _extractPatches(articles);

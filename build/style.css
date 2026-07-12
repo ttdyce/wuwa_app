@@ -380,6 +380,24 @@ body::before {
   padding: 0 2rem;
 }
 
+.patch-next-soon {
+  color: var(--text-dim);
+  font-weight: 400;
+  font-size: 0.65rem;
+  opacity: 0.7;
+  animation: pulse-soon 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-soon {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.patch-next-unknown .patch-version {
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
 /* ---------- Category Filter ---------- */
 .category-filter {
   display: flex;
