@@ -51,14 +51,46 @@
       <div class="patch-timeline">
         <div class="patch-labels">
           <div class="patch-label-left"><span class="patch-version">v3.5</span><span class="patch-name">遺音扶劍，蕩夢而歌</span></div>
-          <div class="patch-countdown patch-next-soon">下次更新敬請期待</div>
-          <div class="patch-label-right patch-next-unknown"><span class="patch-version">???</span></div>
+          <div class="patch-countdown" data-target="2026-08-20T00:00:00.000Z" id="patch-countdown">計算中…</div>
+          <div class="patch-label-right"><span class="patch-version">v3.6</span><span class="patch-name">蜃雲燈影，凡塵劍心</span></div>
         </div>
         <div class="patch-track" id="patch-track">
           <div class="patch-bar" id="patch-bar" style="width: 0%"></div>
           <div class="patch-marker" id="patch-marker" style="left: 0%"></div>
         </div>
-        <div class="patch-dates"><span>2026.07.10</span></div>
+        <div class="patch-dates"><span>2026.07.10</span><span>2026.08.20</span></div>
+        <script>
+        (function() {
+          var el = document.getElementById('patch-countdown');
+          var bar = document.getElementById('patch-bar');
+          var marker = document.getElementById('patch-marker');
+          if (!el) return;
+        
+          var target = new Date(el.getAttribute('data-target')).getTime();
+          if (isNaN(target)) return;
+        
+          function pad(n) { return n < 10 ? '0' + n : n; }
+        
+          function tick() {
+            var now = Date.now();
+            var diff = target - now;
+            if (diff <= 0) {
+              el.textContent = '\u5df2\u66f4\u65b0';
+              if (bar) bar.style.width = '100%';
+              if (marker) marker.style.left = '100%';
+              return;
+            }
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            el.textContent = d + '\u5929 ' + pad(h) + '\u6642 ' + pad(m) + '\u5206 ' + pad(s) + '\u79d2';
+          }
+        
+          tick();
+          setInterval(tick, 1000);
+        })();
+        </script>
       </div>
       <main class="container">
         <div class="hero-banner">
@@ -69,8 +101,8 @@
         <div class="search-bar">
           <input id="search" class="search-input" placeholder="搜尋新聞..." oninput="filterArticles()" type="text"/>
           <span class="search-icon">🔍</span>
-          <span class="search-count">571 則新聞</span>
-          <span class="build-info">最後更新 2026-08-07 12:41:06 UTC+8</span>
+          <span class="search-count">572 則新聞</span>
+          <span class="build-info">最後更新 2026-08-07 21:40:47 UTC+8</span>
         </div>
         <div class="category-filter">
           <button class="filter-btn active" data-filter="all" onclick="setFilter(this)"><span>全部</span></button>
@@ -91,6 +123,12 @@
               <span class="pinned-date">2024.05.23</span>
             </a>
           </div>
+          <div class="month-header">2026年8月</div>
+          <a class="article-card" data-category="公告" href="/article/5250.html">
+            <div class="card-header"><span class="card-category">公告</span></div>
+            <h3 class="card-title">《鳴潮》版本前瞻 | 3.6版本「蜃雲燈影，凡塵劍心」8月20日即將更新</h3>
+            <span class="card-date">2026.08.07</span>
+          </a>
           <div class="month-header">2026年7月</div>
           <a class="article-card" data-category="公告" href="/article/5221.html">
             <div class="card-header"><span class="card-category">公告</span></div>
