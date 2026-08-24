@@ -44,7 +44,11 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "auto: update data/ and build/ [skip ci]"
+            # IMPORTANT: no [skip ci] here — Cloudflare Pages honors it and
+            # would skip the deployment for this push. This workflow only
+            # triggers on schedule/workflow_dispatch (not on push), so the
+            # marker is not needed to prevent re-triggering.
+            git commit -m "auto: update data/ and build/"
             git push
           fi
 
