@@ -1,6 +1,6 @@
 import 'package:jaspr/server.dart';
 import '../components/header.dart';
-import '../components/particles.dart';
+import '../components/footer.dart';
 
 class CalcPage extends StatelessComponent {
   const CalcPage({super.key});
@@ -8,57 +8,114 @@ class CalcPage extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(classes: 'app', [
-      const Particles(),
-      const Header(),
-      main_(classes: 'container calc-container', [
-        a(href: '/', classes: 'back-link', [text('← 返回列表 BACK')]),
+      const Header(activePage: 'calc'),
+      main_(id: 'main-content', classes: 'container calc-container page-main', [
+        a(href: '/', classes: 'back-link', [text('← 返回情報站 / FIELD STATION')]),
         div(classes: 'calc-card', [
+          p(classes: 'eyebrow', [text("ROVER'S KIT / CONVENE PLANNER")]),
           raw('<h1 class="calc-title"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon"/> 鳴潮抽數計算機</h1>'),
-          p(classes: 'calc-subtitle', [text('Wuthering Waves Draw Calculator')]),
+          p(
+              classes: 'calc-subtitle',
+              [text('Wuthering Waves Draw Calculator')]),
           div(classes: 'calc-divider', []),
 
           // Currency → Draws
           div(classes: 'calc-section', [
-            label(classes: 'calc-label', [text('星聲 → 抽數')]),
+            label(
+                classes: 'calc-label',
+                attributes: {'for': 'astrites'},
+                [text('星聲 → 抽數')]),
             div(classes: 'calc-row', [
-              input([], type: InputType.number, classes: 'calc-input', id: 'astrites',
-                attributes: {
-                  'placeholder': '輸入星聲數量',
-                  'oninput': 'calcDraws()',
-                  'min': '0',
-                }),
+              input([],
+                  type: InputType.number,
+                  classes: 'calc-input',
+                  id: 'astrites',
+                  attributes: {
+                    'placeholder': '輸入星聲數量',
+                    'oninput': 'calcDraws()',
+                    'min': '0',
+                    'step': '1',
+                    'inputmode': 'numeric',
+                    'aria-describedby': 'astrites-help astrites-error',
+                    'aria-invalid': 'false',
+                  }),
               span(classes: 'calc-arrow', [text('→')]),
-              div(classes: 'calc-result', [
-                span(classes: 'calc-result-num', id: 'draws-from-astrites', [text('0')]),
+              div(classes: 'calc-result', attributes: {
+                'aria-live': 'polite',
+                'aria-atomic': 'true'
+              }, [
+                span(
+                    classes: 'calc-result-num',
+                    id: 'draws-from-astrites',
+                    [text('0')]),
                 span(classes: 'calc-result-label', [text('抽')]),
               ]),
             ]),
-            div(classes: 'calc-formula', [text('÷ 160 = 抽數')]),
+            p(
+                id: 'astrites-error',
+                classes: 'calc-error',
+                attributes: {'aria-live': 'polite'},
+                []),
+            div(
+                id: 'astrites-help',
+                classes: 'calc-formula',
+                [text('每 160 星聲可喚取 1 次，不足一抽的部分不計入。')]),
           ]),
 
           div(classes: 'calc-divider', []),
 
           // Draws → Currency
           div(classes: 'calc-section', [
-            label(classes: 'calc-label', [text('抽數 → 星聲')]),
+            label(
+                classes: 'calc-label',
+                attributes: {'for': 'draws'},
+                [text('抽數 → 星聲')]),
             div(classes: 'calc-row', [
-              input([], type: InputType.text, classes: 'calc-input', id: 'draws',
-                attributes: {
-                  'placeholder': '輸入抽數或算式 e.g. 80+160',
-                  'oninput': 'calcAstrites()',
-                }),
+              input([],
+                  type: InputType.text,
+                  classes: 'calc-input',
+                  id: 'draws',
+                  attributes: {
+                    'placeholder': '輸入抽數或算式 e.g. 80+160',
+                    'oninput': 'calcAstrites()',
+                    'aria-describedby': 'draws-help draws-error',
+                    'aria-invalid': 'false',
+                  }),
               span(classes: 'calc-arrow', [text('→')]),
-              div(classes: 'calc-result', [
-                span(classes: 'calc-result-num', id: 'astrites-from-draws', [text('0')]),
+              div(classes: 'calc-result', attributes: {
+                'aria-live': 'polite',
+                'aria-atomic': 'true'
+              }, [
+                span(
+                    classes: 'calc-result-num',
+                    id: 'astrites-from-draws',
+                    [text('0')]),
                 raw('<span class="calc-result-label"><img src="/img/astrites.png" alt="Astrites" class="astrites-icon-sm"/></span>'),
               ]),
             ]),
+            p(
+                id: 'draws-error',
+                classes: 'calc-error',
+                attributes: {'aria-live': 'polite'},
+                []),
             div(classes: 'calc-helper-buttons', [
-              button(classes: 'calc-helper-btn', [text('角色小保 (+80)')], attributes: {'onclick': 'addDraws(80)'}),
-              button(classes: 'calc-helper-btn', [text('角色大保 (+160)')], attributes: {'onclick': 'addDraws(160)'}),
-              button(classes: 'calc-helper-btn', [text('武器保底 (+80)')], attributes: {'onclick': 'addDraws(80)'}),
+              button(
+                  classes: 'calc-helper-btn',
+                  [text('角色小保 (+80)')],
+                  attributes: {'onclick': 'addDraws(80)'}),
+              button(
+                  classes: 'calc-helper-btn',
+                  [text('角色大保 (+160)')],
+                  attributes: {'onclick': 'addDraws(160)'}),
+              button(
+                  classes: 'calc-helper-btn',
+                  [text('武器保底 (+80)')],
+                  attributes: {'onclick': 'addDraws(80)'}),
             ]),
-            div(classes: 'calc-formula', [text('× 160 = 所需星聲')]),
+            div(
+                id: 'draws-help',
+                classes: 'calc-formula',
+                [text('× 160 = 所需星聲；支援 + - * / 與括號，結果須為非負整數。')]),
           ]),
 
           div(classes: 'calc-divider', []),
@@ -91,6 +148,8 @@ class CalcPage extends StatelessComponent {
           ]),
           p(classes: 'calc-note', [
             raw('儲值價格來源：<a href="https://payment.kurogame-service.com/pay/wutheringwaves/cashier" target="_blank" rel="noopener">Kuro Games 官方儲值頁</a>'),
+            br(),
+            text('僅列基礎數量，不含首儲加倍及贈送；月相可 1:1 兌換星聲，實際價格以官方為準。'),
           ]),
 
           div(classes: 'calc-divider', []),
@@ -101,7 +160,7 @@ class CalcPage extends StatelessComponent {
             div(classes: 'calc-cost-grid', [
               div(classes: 'calc-cost-item calc-cost-worst', [
                 span(classes: 'calc-cost-label', [text('最貴（小額儲值）')]),
-                span(classes: 'calc-cost-val', [text(r'≈ HK$20 / 抽')]),
+                span(classes: 'calc-cost-val', [text(r'≈ HK$21.33 / 抽')]),
               ]),
               div(classes: 'calc-cost-item calc-cost-best', [
                 span(classes: 'calc-cost-label', [text('小月卡')]),
@@ -111,39 +170,9 @@ class CalcPage extends StatelessComponent {
           ]),
         ]),
       ]),
-      footer(classes: 'footer', [
-        span([text('© 2026 wuwa.app — Not affiliated with Kuro Games')]),
-      ]),
+      const Footer(),
     ]);
-    yield raw('''<script>
-function calcDraws() {
-  var v = parseInt(document.getElementById('astrites').value) || 0;
-  var draws = Math.floor(v / 160);
-  document.getElementById('draws-from-astrites').textContent = draws;
-}
-
-function calcAstrites() {
-  var input = document.getElementById('draws').value.trim();
-  if (!input) {
-    document.getElementById('astrites-from-draws').textContent = '0';
-    return;
-  }
-  try {
-    var sanitized = input.replace(/[^0-9+\\-*/(). ]/g, '');
-    var result = eval(sanitized);
-    var v = Math.floor(result) || 0;
-    var astrites = v * 160;
-    document.getElementById('astrites-from-draws').textContent = astrites.toLocaleString();
-  } catch (e) {}
-}
-
-function addDraws(n) {
-  var el = document.getElementById('draws');
-  var val = el.value.trim();
-  el.value = val ? val + ' + ' + n : n;
-  calcAstrites();
-}
-</script>''');
+    yield raw('<script src="/js/calculator.js" defer></script>');
   }
 
   Component _refItem(String val, String desc) {

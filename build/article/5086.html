@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「遺音扶劍，蕩夢而歌」3.5版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「遺音扶劍，蕩夢而歌」3.5版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「遺音扶劍，蕩夢而歌」3.5版本內容說明</h1>
-          <span class="article-date">2026.07.10</span>
+          <span class="article-date">2026.07.10 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <div data-zone-id="0" data-line-index="0" data-line="true"><span style="color: rgb(255, 255, 255);">親愛的漂泊者：</span></div>
@@ -103,43 +93,43 @@
           <div data-zone-id="0" data-line-index="32" data-line="true"><span style="color: rgb(255, 255, 255);">※跟隨【潮汐任務】第四章・第一幕「山雨欲來風滿樓」的任務指引即可前往。</span></div>
           <div data-zone-id="0" data-line-index="33" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="34" data-line="true"><span style="color: rgb(255, 255, 255);">✦全新聲骸✦</span></div>
-          <div data-zone-id="0" data-line-index="35" data-line="true"><span style="color: rgb(255, 255, 255);">「萬囮牢&middot;朽軀」、「千傀重樓」、「霽息獸尊」、「封庭械囿」、「心傀&middot;喜」、「心傀&middot;怒」、「心傀&middot;憂」、「心傀&middot;思」、「心傀&middot;悲」、「心傀&middot;恐」、「霽息獸尊&middot;身」、「霽息獸尊&middot;首」、「融軀戰士」、「不熄獵手」、「瓷庭候」、「石庭候」、「金庭候」</span></div>
+          <div data-zone-id="0" data-line-index="35" data-line="true"><span style="color: rgb(255, 255, 255);">「萬囮牢·朽軀」、「千傀重樓」、「霽息獸尊」、「封庭械囿」、「心傀·喜」、「心傀·怒」、「心傀·憂」、「心傀·思」、「心傀·悲」、「心傀·恐」、「霽息獸尊·身」、「霽息獸尊·首」、「融軀戰士」、「不熄獵手」、「瓷庭候」、「石庭候」、「金庭候」</span></div>
           <div data-zone-id="0" data-line-index="36" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="37" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>●新增【無音區】：「方擎西峰無音區」、「玄幽東嶽無音區」</strong></span></div>
           <div data-zone-id="0" data-line-index="38" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>●新增【殘象聚落】：「落淵南丘殘象聚落」</strong></span></div>
           <div data-zone-id="0" data-line-index="39" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>●新增【合鳴套裝】：「冥途夜行之燈」（5件套）、「清邪蕩煞之心」（5件套）、「羽落空塵之歌」（5件套）</strong></span></div>
           <div data-zone-id="0" data-line-index="40" data-line="true"><span style="color: rgb(255, 255, 255);">「冥途夜行之燈」（5件套）：角色獲得護盾時，自身暴擊提升5%，該效果可疊加4層，持續5秒，每0.5秒可觸發一次。疊至滿層時，自身造成的熱熔傷害提升15%。</span></div>
-          <div data-zone-id="0" data-line-index="41" data-line="true"><span style="color: rgb(255, 255, 255);">「清邪蕩煞之心」（5件套）：角色為敵人添加【集諧&middot;偏移】時，自身暴擊傷害提升20%，氣動傷害提升30%，持續15秒。</span></div>
+          <div data-zone-id="0" data-line-index="41" data-line="true"><span style="color: rgb(255, 255, 255);">「清邪蕩煞之心」（5件套）：角色為敵人添加【集諧·偏移】時，自身暴擊傷害提升20%，氣動傷害提升30%，持續15秒。</span></div>
           <div data-zone-id="0" data-line-index="42" data-line="true"><span style="color: rgb(255, 255, 255);">「羽落空塵之歌」（5件套）：角色為敵人添加【虛湮效應】時，獲得【玄翎之羽】：自身暴擊提升20%，重擊傷害加成提升35%，持續15秒。</span></div>
           <div data-zone-id="0" data-line-index="43" data-line="true"><span style="color: rgb(255, 255, 255);">角色為敵人添加【霜漸效應】時，獲得【重明之羽】：自身每1%的共鳴效率使隊伍中角色攻擊提升0.1%，上限25%，持續10秒。</span></div>
           <div data-zone-id="0" data-line-index="44" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="45" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>✦全新劇情✦</strong></span></div>
-          <div data-zone-id="0" data-line-index="46" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章&middot;第一幕「山雨欲來風滿樓」</strong></span></div>
-          <div data-zone-id="0" data-line-index="47" data-line="true"><span style="color: rgb(255, 255, 255);">拉海洛的事件告一段落後，你決定暫時返回瑝瓏，卻意外得知了秧秧失蹤的消息。為了尋回下落不明的秧秧，你與秧秧的姐姐&mdash;&mdash;穗穗一起，前往位於夢州的玄方地界一探究竟&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="46" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章·第一幕「山雨欲來風滿樓」</strong></span></div>
+          <div data-zone-id="0" data-line-index="47" data-line="true"><span style="color: rgb(255, 255, 255);">拉海洛的事件告一段落後，你決定暫時返回瑝瓏，卻意外得知了秧秧失蹤的消息。為了尋回下落不明的秧秧，你與秧秧的姐姐——穗穗一起，前往位於夢州的玄方地界一探究竟……</span></div>
           <div data-zone-id="0" data-line-index="48" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="49" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放時間：3.5版本更新後永久開放</span></div>
-          <div data-zone-id="0" data-line-index="50" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第三章&middot;幕間「我們選擇天空」後解鎖。</span></div>
+          <div data-zone-id="0" data-line-index="50" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第三章·幕間「我們選擇天空」後解鎖。</span></div>
           <div data-zone-id="0" data-line-index="51" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
-          <div data-zone-id="0" data-line-index="52" data-line="true"><span style="color: rgb(255, 255, 255);">※3.5版本更新後，漂泊者在滿足【先行體驗】功能解鎖條件時，可透過使用該功能提前接取【潮汐任務】第四章&middot;第一幕「山雨欲來風滿樓」。提前接取後，不同章節的潮汐任務將會並存，可以分別體驗且互不影響。使用先行體驗功能不會影響當前正在進行的任務進度。</span></div>
+          <div data-zone-id="0" data-line-index="52" data-line="true"><span style="color: rgb(255, 255, 255);">※3.5版本更新後，漂泊者在滿足【先行體驗】功能解鎖條件時，可透過使用該功能提前接取【潮汐任務】第四章·第一幕「山雨欲來風滿樓」。提前接取後，不同章節的潮汐任務將會並存，可以分別體驗且互不影響。使用先行體驗功能不會影響當前正在進行的任務進度。</span></div>
           <div data-zone-id="0" data-line-index="53" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
-          <div data-zone-id="0" data-line-index="54" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章&middot;第二幕「玄翎振壑定瀾音」</strong></span></div>
-          <div data-zone-id="0" data-line-index="55" data-line="true"><span style="color: rgb(255, 255, 255);">玄方地界因機傀的暴亂而陷入危機，隨著你的一路深入，此次事件的策劃者也最終浮出水面，一名出身神秘的工匠意圖染指歲主的技術，操控機傀向玄方城發動了攻擊&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="54" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章·第二幕「玄翎振壑定瀾音」</strong></span></div>
+          <div data-zone-id="0" data-line-index="55" data-line="true"><span style="color: rgb(255, 255, 255);">玄方地界因機傀的暴亂而陷入危機，隨著你的一路深入，此次事件的策劃者也最終浮出水面，一名出身神秘的工匠意圖染指歲主的技術，操控機傀向玄方城發動了攻擊……</span></div>
           <div data-zone-id="0" data-line-index="56" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="57" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放時間：3.5版本更新後永久開放</span></div>
-          <div data-zone-id="0" data-line-index="58" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第四章&middot;第一幕「山雨欲來風滿樓」後解鎖。</span></div>
+          <div data-zone-id="0" data-line-index="58" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第四章·第一幕「山雨欲來風滿樓」後解鎖。</span></div>
           <div data-zone-id="0" data-line-index="59" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
-          <div data-zone-id="0" data-line-index="60" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章&middot;幕間「靈籟之契冥相因」</strong></span></div>
-          <div data-zone-id="0" data-line-index="61" data-line="true"><span style="color: rgb(255, 255, 255);">機傀危機的數日之後，秧秧選擇暫時留在玄方地界，幫助此處的將士與民眾。在等待自己頻譜檢驗報告的間隙，一道神秘的聲音自她的耳畔響起&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="60" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【潮汐任務】第四章·幕間「靈籟之契冥相因」</strong></span></div>
+          <div data-zone-id="0" data-line-index="61" data-line="true"><span style="color: rgb(255, 255, 255);">機傀危機的數日之後，秧秧選擇暫時留在玄方地界，幫助此處的將士與民眾。在等待自己頻譜檢驗報告的間隙，一道神秘的聲音自她的耳畔響起……</span></div>
           <div data-zone-id="0" data-line-index="62" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="63" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放時間：3.5版本更新後永久開放</span></div>
-          <div data-zone-id="0" data-line-index="64" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第四章&middot;第二幕「玄翎振壑定瀾音」後解鎖。</span></div>
+          <div data-zone-id="0" data-line-index="64" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放條件：完成【潮汐任務】第四章·第二幕「玄翎振壑定瀾音」後解鎖。</span></div>
           <div data-zone-id="0" data-line-index="64" data-line="true">&nbsp;</div>
-          <div data-zone-id="0" data-line-index="66" data-line="true"><span style="color: rgb(255, 255, 255);">※在【潮汐任務】第四章&middot;第一幕「山雨欲來風滿樓」中啟用井棧的中樞信標可獲得科考摩托訂製車架「雲帛機騎」。</span></div>
+          <div data-zone-id="0" data-line-index="66" data-line="true"><span style="color: rgb(255, 255, 255);">※在【潮汐任務】第四章·第一幕「山雨欲來風滿樓」中啟用井棧的中樞信標可獲得科考摩托訂製車架「雲帛機騎」。</span></div>
           <div data-zone-id="0" data-line-index="67" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="68" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【危行任務】「緊急事件：核心危機」</strong></span></div>
           <div data-zone-id="0" data-line-index="69" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【危行任務】「危構懸天問丹心」</strong></span></div>
           <div data-zone-id="0" data-line-index="70" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【危行任務】「霧鎖機伶」</strong></span></div>
-          <div data-zone-id="0" data-line-index="71" data-line="true"><span style="color: rgb(255, 255, 255);">※完成【潮汐任務】第四章&middot;第二幕「玄翎振壑定瀾音」後，再進行【危行任務】「危構懸天問丹心」體驗更佳。</span></div>
+          <div data-zone-id="0" data-line-index="71" data-line="true"><span style="color: rgb(255, 255, 255);">※完成【潮汐任務】第四章·第二幕「玄翎振壑定瀾音」後，再進行【危行任務】「危構懸天問丹心」體驗更佳。</span></div>
           <div data-zone-id="0" data-line-index="72" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="73" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>✦全新活動以及玩法✦</strong></span></div>
           <div data-zone-id="0" data-line-index="74" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【版本活動】：</strong></span></div>
@@ -149,7 +139,7 @@
           <div data-zone-id="0" data-line-index="78" data-line="true"><span style="color: rgb(255, 255, 255);">✦活動時間：3.5版本更新後 ~ 2026年8月19日03:59（伺服器時間）</span></div>
           <div data-zone-id="0" data-line-index="79" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="80" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[不改舊時影]留影收集活動</strong></span></div>
-          <div data-zone-id="0" data-line-index="81" data-line="true"><span style="color: rgb(255, 255, 255);">玄方地界的危機暫時解除，銜翎村中出現了一道陌生的人影&hellip;&hellip;他攜著一段跨越百年的情怨，第一次踏上這片陌生的故土&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="81" data-line="true"><span style="color: rgb(255, 255, 255);">玄方地界的危機暫時解除，銜翎村中出現了一道陌生的人影……他攜著一段跨越百年的情怨，第一次踏上這片陌生的故土……</span></div>
           <div data-zone-id="0" data-line-index="82" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放時間：3.5版本更新後永久開放</span></div>
           <div data-zone-id="0" data-line-index="83" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="84" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[悲鳴行動：無音危機]戰鬥活動</strong></span></div>
@@ -157,16 +147,16 @@
           <div data-zone-id="0" data-line-index="86" data-line="true"><span style="color: rgb(255, 255, 255);">✦活動時間：2026年7月11日10:00 ~ 2026年8月19日11:59（伺服器時間）</span></div>
           <div data-zone-id="0" data-line-index="87" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="88" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[再續・光影瞬息]戰鬥拍照活動</strong></span></div>
-          <div data-zone-id="0" data-line-index="89" data-line="true"><span style="color: rgb(255, 255, 255);">鐺鐺鐺&mdash;&mdash;潮汐影像特別企劃・共鳴者戰鬥篇，限時返場！</span></div>
+          <div data-zone-id="0" data-line-index="89" data-line="true"><span style="color: rgb(255, 255, 255);">鐺鐺鐺——潮汐影像特別企劃・共鳴者戰鬥篇，限時返場！</span></div>
           <div data-zone-id="0" data-line-index="90" data-line="true"><span style="color: rgb(255, 255, 255);">捕捉共鳴者們戰鬥的閃耀瞬間，發送給斐林和西莫斯先生，可換取諸多獎勵！</span></div>
           <div data-zone-id="0" data-line-index="91" data-line="true"><span style="color: rgb(255, 255, 255);">✦活動時間：2026年7月16日10:00 ~ 2026年8月6日03:59（伺服器時間）</span></div>
           <div data-zone-id="0" data-line-index="92" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="93" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[虛域危局・象限延展]危機情景挑戰活動</strong></span></div>
-          <div data-zone-id="0" data-line-index="94" data-line="true"><span style="color: rgb(255, 255, 255);">泰緹斯系統重構索拉里斯危機情景的演練程式迎來升級，融匯拉海洛收集的新數據後，更嚴酷的危情在等待挑戰者&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="94" data-line="true"><span style="color: rgb(255, 255, 255);">泰緹斯系統重構索拉里斯危機情景的演練程式迎來升級，融匯拉海洛收集的新數據後，更嚴酷的危情在等待挑戰者……</span></div>
           <div data-zone-id="0" data-line-index="95" data-line="true"><span style="color: rgb(255, 255, 255);">✦活動時間：2026年7月30日10:00 ~ 2026年8月19日03:59（伺服器時間）</span></div>
           <div data-zone-id="0" data-line-index="96" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="97" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[嗚嗚企劃・新旅]限時委託活動</strong></span></div>
-          <div data-zone-id="0" data-line-index="98" data-line="true"><span style="color: rgb(255, 255, 255);">活動期間，完成每日任務即可獲得嗚嗚物流的謝禮&mdash;&mdash;「嗚嗚郵幣」。「嗚嗚郵幣」可用於兌換嗚嗚物流回贈的「助嗚為樂」特別郵遞。</span></div>
+          <div data-zone-id="0" data-line-index="98" data-line="true"><span style="color: rgb(255, 255, 255);">活動期間，完成每日任務即可獲得嗚嗚物流的謝禮——「嗚嗚郵幣」。「嗚嗚郵幣」可用於兌換嗚嗚物流回贈的「助嗚為樂」特別郵遞。</span></div>
           <div data-zone-id="0" data-line-index="99" data-line="true"><span style="color: rgb(255, 255, 255);">✦活動時間：2026年8月6日04:00 ~ 2026年8月19日03:59（伺服器時間）</span></div>
           <div data-zone-id="0" data-line-index="100" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="101" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>[餘音贈禮]七日簽到活動</strong></span></div>
@@ -175,7 +165,7 @@
           <div data-zone-id="0" data-line-index="104" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="105" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【新增玩法】：</strong></span></div>
           <div data-zone-id="0" data-line-index="106" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【明慎輯錄】全新常駐玩法</strong></span></div>
-          <div data-zone-id="0" data-line-index="107" data-line="true"><span style="color: rgb(255, 255, 255);">從玄方城建立以來，巡方使們一直在「明慎台」系統的輔助下維護城中的安定，而最近，城中頻繁發生的可疑事件引發了他們的擔憂&hellip;&hellip;</span></div>
+          <div data-zone-id="0" data-line-index="107" data-line="true"><span style="color: rgb(255, 255, 255);">從玄方城建立以來，巡方使們一直在「明慎台」系統的輔助下維護城中的安定，而最近，城中頻繁發生的可疑事件引發了他們的擔憂……</span></div>
           <div data-zone-id="0" data-line-index="108" data-line="true"><span style="color: rgb(255, 255, 255);">✦開放時間：3.5版本更新後永久開放</span></div>
           <div data-zone-id="0" data-line-index="109" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
           <div data-zone-id="0" data-line-index="110" data-line="true"><span style="color: rgb(255, 255, 255);"><strong>【H5網頁活動】：</strong></span></div>
@@ -413,7 +403,7 @@
           <div data-zone-id="0" data-line-index="0" data-line="true"><span style="color: rgb(255, 255, 255);">- 修復了共鳴者「洛瑟菈」在施放技能【斷捨離】後，有機率出現鏡頭表現異常的問題。</span></div>
           <div data-zone-id="0" data-line-index="1" data-line="true"><span style="color: rgb(255, 255, 255);">- 修復了共鳴者「露西」在施放共鳴解放【暗網深潛】時，行動裝置內有機率出現按鈕可響應範圍異常，導致技能無法施放的問題。</span></div>
           <div data-zone-id="0" data-line-index="2" data-line="true"><span style="color: rgb(255, 255, 255);">- 修復了共鳴者「達妮婭」、「仇遠」的【檔案】-【經歷】-【共鳴者故事】內部分文本有誤的問題。</span></div>
-          <div data-zone-id="0" data-line-index="4" data-line="true"><span style="color: rgb(255, 255, 255);">- 修復了在【還原培育&middot;寂靜斷崖】玩法中，完成寂靜斷崖【藏寶地】可獲取的道具【F型還原素】數量顯示有誤的問題。該修復不影響玩法的實際道具獲取數量。</span></div>
+          <div data-zone-id="0" data-line-index="4" data-line="true"><span style="color: rgb(255, 255, 255);">- 修復了在【還原培育·寂靜斷崖】玩法中，完成寂靜斷崖【藏寶地】可獲取的道具【F型還原素】數量顯示有誤的問題。該修復不影響玩法的實際道具獲取數量。</span></div>
           </div>
           </div>
           <div data-zone-id="0" data-line-index="44" data-line="true"><span style="color: rgb(255, 255, 255);">&nbsp;</span></div>
@@ -421,8 +411,22 @@
           </div>
           </div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

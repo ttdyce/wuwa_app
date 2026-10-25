@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: dart pub get
 
+      - name: Analyze and run regression checks
+        run: |
+          dart analyze
+          dart run tool/check_site.dart
+          node --test test/site.test.cjs
+
       - name: Fetch articles
         run: dart run tool/fetch_articles.dart
 

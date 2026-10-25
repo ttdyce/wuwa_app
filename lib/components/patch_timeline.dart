@@ -12,7 +12,8 @@ class PatchTimeline extends StatelessComponent {
   final PatchInfo current;
   final PatchInfo? next; // nullable — may not be announced yet
   final double progressPercent; // 0.0 – 1.0
-  final String nextDateIso; // ISO date for JS countdown target (empty if no next)
+  final String
+      nextDateIso; // ISO date for JS countdown target (empty if no next)
 
   const PatchTimeline({
     super.key,
@@ -22,8 +23,10 @@ class PatchTimeline extends StatelessComponent {
     this.nextDateIso = '',
   });
 
-  String _formatDate(DateTime d) =>
-      '${d.year}.${d.month.toString().padLeft(2, '0')}.${d.day.toString().padLeft(2, '0')}';
+  String _formatDate(DateTime d) {
+    final local = d.toUtc().add(const Duration(hours: 8));
+    return '${local.year}.${local.month.toString().padLeft(2, '0')}.${local.day.toString().padLeft(2, '0')}';
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
@@ -56,20 +59,27 @@ class PatchTimeline extends StatelessComponent {
           ])
         else
           div(classes: 'patch-label-right patch-next-unknown', [
-            span(classes: 'patch-version', [text('???')]),
+            span(classes: 'patch-version', [text('持續共鳴中')]),
           ]),
       ]),
 
       // --- full-width track ---
-      div(classes: 'patch-track', attributes: {'id': 'patch-track'}, [
-        div([], classes: 'patch-bar', attributes: {
-          'id': 'patch-bar',
-          'style': 'width: 0%',
-        }),
-        div([], classes: 'patch-marker', attributes: {
-          'id': 'patch-marker',
-          'style': 'left: 0%',
-        }),
+      div(classes: 'patch-track', attributes: {
+        'id': 'patch-track',
+        'aria-hidden': 'true'
+      }, [
+        div([],
+            classes: 'patch-bar',
+            attributes: {
+              'id': 'patch-bar',
+              'style': 'width: ${progressPercent * 100}%',
+            }),
+        div([],
+            classes: 'patch-marker',
+            attributes: {
+              'id': 'patch-marker',
+              'style': 'left: ${progressPercent * 100}%',
+            }),
       ]),
 
       // --- date row ---
@@ -79,8 +89,7 @@ class PatchTimeline extends StatelessComponent {
       ]),
 
       // --- countdown JS (only when we have a target) ---
-      if (hasNext && nextDateIso.isNotEmpty)
-        raw('''<script>
+      if (hasNext && nextDateIso.isNotEmpty) raw('''<script>
 (function() {
   var el = document.getElementById('patch-countdown');
   var bar = document.getElementById('patch-bar');
@@ -88,12 +97,16 @@ class PatchTimeline extends StatelessComponent {
   if (!el) return;
 
   var target = new Date(el.getAttribute('data-target')).getTime();
+  var start = new Date('${current.date.toUtc().toIso8601String()}').getTime();
   if (isNaN(target)) return;
 
   function pad(n) { return n < 10 ? '0' + n : n; }
 
   function tick() {
     var now = Date.now();
+    var progress = Math.max(0, Math.min(100, (now - start) / (target - start) * 100));
+    if (bar) bar.style.width = progress + '%';
+    if (marker) marker.style.left = progress + '%';
     var diff = target - now;
     if (diff <= 0) {
       el.textContent = '\\u5df2\\u66f4\\u65b0';

@@ -8,9 +8,11 @@ environment:
 dependencies:
   jaspr: ^0.18.0
   http: ^1.2.0
+  html: ^0.15.6
 
 dev_dependencies:
   jaspr_builder: ^0.18.0
+  lints: ^6.0.0
 
 jaspr:
   mode: static

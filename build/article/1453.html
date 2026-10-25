@@ -1,62 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「行至海岸盡頭」1.3版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「行至海岸盡頭」1.3版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「行至海岸盡頭」1.3版本內容說明</h1>
-          <span class="article-date">2024.09.29</span>
+          <span class="article-date">2024.09.29 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <div>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://hw-media-cdn-mingchao.kurogame.com/object/1727539200000/ckxpaxsmmx341mgnmc-1727575991563.jpg" alt="" width="800" height="450" /></span></span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://hw-media-cdn-mingchao.kurogame.com/object/1727539200000/ckxpaxsmmx341mgnmc-1727575991563.jpg" alt="" width="800" height="450"></span></span></p>
           <p class="MsoNormal">&nbsp;</p>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">親愛的漂泊者：</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -91,7 +81,7 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">守岸人，黑海岸的守護者，這種程度的說明對她便已足夠。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">至於渴望、羈絆、情感&hellip;&hellip;除職責外她所擁有的一切，都豐滿於與你相遇之後。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">至於渴望、羈絆、情感……除職責外她所擁有的一切，都豐滿於與你相遇之後。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">✦戰鬥風格：【生存治療】【牽引】【傷害加深】</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -115,7 +105,7 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">5</span>星武器「星序協響」（音感儀）</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">載有能量的核心，擬造著群星演化的循環。無限以奇點為源，將牽引的星團拋散，但寂滅流轉，末隕盡頭處又總傳來不息的回聲&mdash;&mdash;那是新星誕生時的問候。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">載有能量的核心，擬造著群星演化的循環。無限以奇點為源，將牽引的星團拋散，但寂滅流轉，末隕盡頭處又總傳來不息的回聲——那是新星誕生時的問候。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">※可透過<span lang="EN-US">[</span>浮聲沉兵・<span style="mso-ascii-font-family: 等线; mso-fareast-font-family: 等线; mso-hansi-font-family: 等线; mso-bidi-font-family: 等线;">星序協響</span><span lang="EN-US">]</span>武器活動喚取獲得。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -227,7 +217,7 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span lang="EN-US" style="font-family: 微软雅黑; font-size: 14pt;">&nbsp;</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">[</span>潮汐覓聞<span lang="EN-US">]</span>限時勘察活動&mdash;&mdash;乘霄山特別勘察</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">[</span>潮汐覓聞<span lang="EN-US">]</span>限時勘察活動——乘霄山特別勘察</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">每日完成勘察任務，可獲得【勘察點數】，達到【勘察點數】要求即可領取對應獎勵。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -351,7 +341,7 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">行動端設備支持【手把模式】</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>行動端設備支持以下手把的無線連接方式：<span lang="EN-US">Xbox</span>系列、<span lang="EN-US">Xbox Elite</span>系列、<span lang="EN-US">DualShock&reg;4</span>、<span lang="EN-US">DualSense&reg;</span>、<span lang="EN-US">DualSense Edge</span>&trade;</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>行動端設備支持以下手把的無線連接方式：<span lang="EN-US">Xbox</span>系列、<span lang="EN-US">Xbox Elite</span>系列、<span lang="EN-US">DualShock®4</span>、<span lang="EN-US">DualSense®</span>、<span lang="EN-US">DualSense Edge</span>™</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>連接手把後，在主介面進行任意手把輸入會自動觸發切換【手把模式】的彈出框。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -457,11 +447,11 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;">角色＆武器</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「相里要」在觸發共鳴回路【共鳴技能&middot;應刃】後，切換角色時會出現角色動作表現異常的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「相里要」在觸發共鳴回路【共鳴技能·應刃】後，切換角色時會出現角色動作表現異常的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「折枝」在施放共鳴解放【虛實境趣】時，有機率出現動畫表現異常的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「折枝」在施放共鳴技能【以形寫神】或觸發共鳴回路【重擊&middot;構形】召喚【鶴影】時，部分場景下有機率出現【鶴影】不可見的問題。該問題為顯示問題，對實際技能效果並無影響。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「折枝」在施放共鳴技能【以形寫神】或觸發共鳴回路【重擊·構形】召喚【鶴影】時，部分場景下有機率出現【鶴影】不可見的問題。該問題為顯示問題，對實際技能效果並無影響。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「今汐」在施放共鳴技能【驚龍破空】時，有機率出現特效表現異常的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -469,9 +459,9 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「白芷」的部分語音，在英語語音下配音和文本不一致的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「丹瑾」在觸發共鳴回路【重擊&middot;繚亂】時，有機率出現異常掉落至地下的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「丹瑾」在觸發共鳴回路【重擊·繚亂】時，有機率出現異常掉落至地下的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「熾霞」在【多人遊戲】模式下，觸發共鳴回路【共鳴技能&middot;咔咔壓制】的技能特效在其他漂泊者視角不可見的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了共鳴者「熾霞」在【多人遊戲】模式下，觸發共鳴回路【共鳴技能·咔咔壓制】的技能特效在其他漂泊者視角不可見的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在特定情況下，有機率出現角色技能特效不顯示的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -485,7 +475,7 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在和殘象【哀聲鷙】【無妄者】【鳴鐘之龜】【暗鬃狼】的戰鬥中，敵人的部分技能有機率會導致角色技能傷害丟失的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在吸收殘象【異相&middot;磐石守衛】及【異相&middot;寒霜陸龜】後，會異常扣除【強化吸收次數】的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在吸收殘象【異相·磐石守衛】及【異相·寒霜陸龜】後，會異常扣除【強化吸收次數】的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了殘象【青羽鷺】【紫羽鷺】在捕獲各屬性【棱鏡】殘象後，有機率出現所捕獲的【棱鏡】模型不消失的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -571,11 +561,11 @@
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在【中曲臺地】<span lang="EN-US">-</span>【桃源鄉】特定區域內，有機率出現部分【隙聲蝶】在觸碰後異常消失的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在【全像戰略&middot;強襲】<span lang="EN-US">-</span>【飛廉之猩】<span lang="EN-US">-</span>【難度六】玩法中，有機率出現敵人的部分技能在未施放完畢時提前結束的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在【全像戰略·強襲】<span lang="EN-US">-</span>【飛廉之猩】<span lang="EN-US">-</span>【難度六】玩法中，有機率出現敵人的部分技能在未施放完畢時提前結束的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在部分【全像戰略&middot;競雪】玩法中，有機率出現玩法過程中穿過圓環後未正確計算該圓環積分的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在部分【全像戰略·競雪】玩法中，有機率出現玩法過程中穿過圓環後未正確計算該圓環積分的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
-          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在部分【全像戰略&middot;競雪】玩法中，有機率出現到達終點後【競雪】狀態未正常結束，導致該玩法失敗的問題。</span></p>
+          <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在部分【全像戰略·競雪】玩法中，有機率出現到達終點後【競雪】狀態未正常結束，導致該玩法失敗的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
           <p class="MsoNormal"><span style="font-family: 微软雅黑; font-size: 14pt;"><span lang="EN-US">- </span>修復了在【無音清剿】玩法中，部分【無音區】完成挑戰後依然會殘留敵人模型的問題。</span></p>
           <span style="font-family: 微软雅黑; font-size: 14pt;"> </span>
@@ -615,8 +605,22 @@
           <div>&nbsp;</div>
           <div>&nbsp;</div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

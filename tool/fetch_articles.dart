@@ -39,6 +39,10 @@ Future<void> main() async {
 
   final List<dynamic> raw = json.decode(response.body);
   print('Received ${raw.length} articles from list API');
+  if (raw.isEmpty) {
+    throw StateError(
+        'The official article list is empty; cached data was not changed.');
+  }
 
   // Load cached content so we only fetch new/changed articles
   final existing = await loadExistingArticles();
@@ -54,12 +58,13 @@ Future<void> main() async {
     final sortingMark = json['sortingMark'] ?? 0;
 
     final cached = existing[id];
+    final cachedContent = cached?['content'] as String? ?? '';
     // Reuse cached content if article exists and metadata unchanged
     final isUnchanged = cached != null &&
         cached['title'] == title &&
         cached['startTime'] == startTime &&
         cached['sortingMark'] == sortingMark &&
-        (cached['content'] as String).isNotEmpty;
+        cachedContent.trim().isNotEmpty;
 
     if (!isUnchanged) {
       idsToFetch.add(id);
@@ -68,7 +73,7 @@ Future<void> main() async {
     articles.add({
       'id': id,
       'title': title,
-      'content': isUnchanged ? cached!['content'] : '', // filled later
+      'content': cachedContent,
       'articleType': json['articleType'] ?? 90,
       'createTime': json['createTime'],
       'startTime': startTime,
@@ -76,15 +81,6 @@ Future<void> main() async {
       'isPinned': (json['top'] ?? 0) == 1,
     });
   }
-
-  // Sort: pinned first, then by startTime descending
-  articles.sort((a, b) {
-    if (a['isPinned'] && !b['isPinned']) return -1;
-    if (!a['isPinned'] && b['isPinned']) return 1;
-    final dateA = DateTime.parse(a['startTime'] as String);
-    final dateB = DateTime.parse(b['startTime'] as String);
-    return dateB.compareTo(dateA);
-  });
 
   // Second pass: fetch full content only for new/changed articles
   final cachedCount = articles.length - idsToFetch.length;
@@ -105,11 +101,18 @@ Future<void> main() async {
       );
 
       if (detailResponse.statusCode == 200) {
-        final detail = json.decode(detailResponse.body);
-        contentMap[id] = detail['articleContent'] ?? '';
-        fetched++;
+        final detail = json.decode(detailResponse.body) as Map<String, dynamic>;
+        final content = detail['articleContent'] as String?;
+        if (content == null || content.trim().isEmpty) {
+          print('  WARN: Article $id returned empty content');
+          failed++;
+        } else {
+          contentMap[id] = content;
+          fetched++;
+        }
       } else {
-        print('  WARN: Failed to fetch article $id (HTTP ${detailResponse.statusCode})');
+        print(
+            '  WARN: Failed to fetch article $id (HTTP ${detailResponse.statusCode})');
         failed++;
       }
     } catch (e) {
@@ -119,7 +122,8 @@ Future<void> main() async {
 
     // Progress indicator every 50 articles
     if ((fetched + failed) % 50 == 0 && (fetched + failed) > 0) {
-      print('  Progress: ${fetched + failed}/${idsToFetch.length} (${fetched} ok, ${failed} failed)');
+      print(
+          '  Progress: ${fetched + failed}/${idsToFetch.length} ($fetched ok, $failed failed)');
     }
 
     // Small delay to be polite to the server
@@ -127,14 +131,37 @@ Future<void> main() async {
   }
 
   // Apply fetched content back to articles
-  for (final article in articles) {
+  for (var i = 0; i < articles.length; i++) {
+    final article = articles[i];
     final id = article['id'] as int;
+    final cached = existing[id];
     if (contentMap.containsKey(id)) {
       article['content'] = contentMap[id];
+    } else if (cached != null && idsToFetch.contains(id)) {
+      // Keep old metadata too, so the failed update is retried on the next run.
+      articles[i] = cached;
+      print('  Retaining cached article $id; update will be retried.');
     }
   }
 
-  print('Content fetch complete: $fetched ok, $failed failed, $cachedCount cached');
+  print(
+      'Content fetch complete: $fetched ok, $failed failed, $cachedCount cached');
+
+  final missingContent = articles
+      .where((article) => (article['content'] as String).trim().isEmpty)
+      .map((article) => article['id'])
+      .toList();
+  if (missingContent.isNotEmpty) {
+    throw StateError(
+        'Missing content for articles ${missingContent.join(', ')}; cached data was not changed. Retry the fetch.');
+  }
+
+  articles.sort((a, b) {
+    if (a['isPinned'] && !b['isPinned']) return -1;
+    if (!a['isPinned'] && b['isPinned']) return 1;
+    return DateTime.parse(b['startTime'] as String)
+        .compareTo(DateTime.parse(a['startTime'] as String));
+  });
 
   final outputFile = File('data/articles.json');
   await outputFile.parent.create(recursive: true);

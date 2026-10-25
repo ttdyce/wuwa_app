@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「我們生而眺望」3.0版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「我們生而眺望」3.0版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「我們生而眺望」3.0版本內容說明</h1>
-          <span class="article-date">2025.12.25</span>
+          <span class="article-date">2025.12.25 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <p>親愛的漂泊者：<br>感謝您的持續關注！「我們生而眺望」3.0版本內容介紹如下，還請漂泊者查閱。<br>&nbsp;<br><strong>【維護時間＆補償說明】</strong><br><strong>✦更新維護時間：2025年12月25日04:00 ~ 2025年12月25日11:00（UTC+8）</strong><br><strong>✦更新維護補償：星聲*300、結晶溶劑*2</strong><br><strong>✦補償領取條件：2025年12月25日04:00（UTC+8）前創建角色且解鎖【郵件】功能，補償郵件領取有效期至下個版本更新維護前。</strong><br><strong>※根據當日維護實際進程，維護時間可能出現延長的情況，項目組會對應實際情況進行追加公告說明和補償調整。</strong><br>&nbsp;<br><strong>✦問題修復補償：星聲*300</strong><br><strong>✦補償領取條件：2025年12月25日04:00（UTC+8）前創建角色且解鎖【郵件】功能，補償郵件領取有效期至下個版本更新維護前。</strong><br>&nbsp;<br><strong>【一起出發吧，向著星炬學院】</strong><br>3.0版本開啟後，登入遊戲即可透過郵件領取以下獎勵內容。<br><strong>✦獎勵內容：浮金波紋*10、結晶溶劑*10</strong><br><strong>✦領取條件：聯覺等級達到2級，解鎖【郵件】功能，獎勵郵件領取有效期至下個版本更新維護前。</strong></p>
@@ -70,7 +60,7 @@
           <p><strong>✦全新聲骸✦</strong><br>「海維夏」、「爐芯機骸」、「雙極・星升輝銃」、「雙極・淵隕重鋒」、「蒔植機麋」、「礦岩機麋」、「重工鐵蹄」、「探隧重機」、「鋸襲鐵影」、「隱跡鐵影」、「霜鱗蜃甲」、「風鱗蜃甲」、「蒔植熊蜂」、「礦岩熊蜂」、「岩蛛S4型」、「劈啪啪」、「顫慄戰士」</p>
           <p><strong>●新增【殘象聚落】：「殘象聚落・拉海洛」</strong><br>※分為普通與高難兩個難度，每日都將刷新一定數量的殘象，無需消耗結晶波片即可在此獲得聲骸。</p>
           <p><strong>●新增【合鳴套裝】：「逆光躍彩之約」、「星構尋輝之環」、「流金溯真之式」</strong><br>「逆光躍彩之約」（5件套）：角色施放延奏技能後，下一個變奏技能登場的角色攻擊提升15%，其每點諧度破壞增幅還會使攻擊額外提升0.3%，上限15%，持續15秒，若切換至其他角色則該效果提前結束。<br>「星構尋輝之環」（5件套）：為隊伍中角色提供治療時，自身每1%的偏諧值累積效率使隊伍中角色攻擊提升0.2%，上限25%，持續4秒，同名效果之間不可疊加。<br>「流金溯真之式」（5件套）：角色造成普攻傷害時，自身衍射傷害提升10%，該效果可疊加3層，持續5秒。疊至3層時，施放共鳴解放時，普攻傷害加成提升40%。</p>
-          <p><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第三章 「駛向尚未點亮之星」</strong><br>異常流逝的頻率、二十年前的舊學生證，都指向了遙遠極地「羅伊冰原」之下的「拉海洛」。<br>如今，空間隧道已然開啟，你即將作為新入學的「適格者」進入星炬學院&mdash;&mdash;在那片冰原之下點亮的炬火與久遠的約定，正在等待著你的「歸來」&hellip;&hellip;</p>
+          <p><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第三章 「駛向尚未點亮之星」</strong><br>異常流逝的頻率、二十年前的舊學生證，都指向了遙遠極地「羅伊冰原」之下的「拉海洛」。<br>如今，空間隧道已然開啟，你即將作為新入學的「適格者」進入星炬學院——在那片冰原之下點亮的炬火與久遠的約定，正在等待著你的「歸來」……</p>
           <p><strong>【潮汐任務】第三章・序幕「未知的既感」</strong><br><strong>【潮汐任務】第三章・第一幕「冰原下的星炬」</strong><br><strong>【潮汐任務】第三章・第二幕「致第二次日出」</strong><br>✦開放時間：第三章・序幕「未知的既感」以及第三章・第一幕「冰原下的星炬」將在3.0版本更新後永久開放，第三章・第二幕「致第二次日出」將在2026年1月15日10:00永久開放（伺服器時間）。<br>※3.0版本更新後，在【潮汐任務】第一章・第一幕「嚶鳴初相召」中，前往今州城中樞信標處登錄終端後，即可解鎖[前往拉海洛]潮汐任務快速體驗功能，使用該功能可提前解鎖【潮汐任務】第三章・序幕「未知的既感」。提前解鎖後，潮汐任務第一章/第二章/第三章將會並存，可以分別體驗且互不影響。提前解鎖不會影響原有任務進度或解鎖情況。<br>※完成【潮汐任務】第二章・幕間「星光流轉於眼眸之間」後，再進行潮汐任務第三章體驗更佳。</p>
           <p><strong>【危行任務】「光的來處」</strong><br><strong>【危行任務】「車手一號」</strong><br><strong>【危行任務】「失落的樂聲」</strong></p>
           <p><strong>✦全新活動以及玩法✦</strong><br><strong>【版本活動】：</strong><br><strong>[拉海洛先行計劃]區域探索活動</strong><br>參與由深空聯合發起的拉海洛先行計劃，完成各類探索任務，進一步知曉拉海洛奧秘的同時獲取豐厚獎勵。<br>✦開放時間：3.0版本更新後 ~</p>
@@ -81,7 +71,7 @@
           <p><strong>[來自寂靜之聲]休閒活動</strong><br>透過對錯誤「訊息」的解析，可還原「訊息」所含文字圖片的全貌，並獲得相應獎勵。<br>✦活動時間：2026年1月22日04:00 ~ 2026年2月4日03:59（伺服器時間）</p>
           <p><strong>[開學贈禮]七日簽到活動</strong><br>活動開啟期間，每日登入遊戲，即可前往活動介面領取對應天數的簽到獎勵。<br>✦活動時間：3.0版本更新後 ~ 2026年2月4日03:59（伺服器時間）</p>
           <p><strong>【聯動活動】：</strong><br><strong>[音速異聞]</strong><br>「女神異聞錄5 皇家版」、「女神異聞錄3 Reload」、「索尼克」主題聯動活動。完成主題任務，即可獲取對應聯動塗裝及各類養成材料。<br>✦開放時間：3.0版本更新後 ~ 2026年2月4日03:59（伺服器時間）</p>
-          <p><strong>【新增玩法】：</strong><br><strong>【矩陣疊兵・先行版】全新高難週期挑戰</strong><br>深空聯合的數據庫內，每日都在上演看不見的激烈攻防。找到潛藏在矩陣深處的惡意源頭，然後&hellip;&hellip;消滅它。<br>✦開放時間：3.0版本更新後 ~ 下個版本更新維護前<br>✦開放條件：3.0版本更新後，在【逆境深塔】的深境區中至少一期最高獲得印記不少於24個，並且在【冥歌海墟】的再生海墟-湍淵中至少一期累計積分不低於3500。</p>
+          <p><strong>【新增玩法】：</strong><br><strong>【矩陣疊兵・先行版】全新高難週期挑戰</strong><br>深空聯合的數據庫內，每日都在上演看不見的激烈攻防。找到潛藏在矩陣深處的惡意源頭，然後……消滅它。<br>✦開放時間：3.0版本更新後 ~ 下個版本更新維護前<br>✦開放條件：3.0版本更新後，在【逆境深塔】的深境區中至少一期最高獲得印記不少於24個，並且在【冥歌海墟】的再生海墟-湍淵中至少一期累計積分不低於3500。</p>
           <p><strong>【開闢測界之路】全新常駐玩法</strong><br>拉海洛的路網系統以及負責觀測記錄地形、生態與氣候的深空測界台被虛質磁暴摧毀，如今亟待重建。<br>使用在拉海洛獲得的重建材料，協助德莉琺完成路網與深空測界台的重建。<br>✦開放時間：3.0版本更新後 ~<br>✦開放條件：聯覺等級達到8級，並完成【道引任務】「開闢測界之路」後解鎖。</p>
           <p><strong>✦其他全新內容✦</strong><br>●「全像戰略・同步」挑戰內容：「無妄者」<br>●【聲骸異相】：「異相・雙極・淵隕重鋒」、「異相・雙極・星升輝銃」、「異相・浮靈偶」<br>●【羈旅印章】：「丈量世界」<br>●【稱號】：「沐浴幻痛」、「強襲終結者」<br>●【科考摩托塗裝】：「隨心色彩」、「布要上學！」</p>
           <p>&nbsp;</p>
@@ -122,8 +112,22 @@
           </div>
           </div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

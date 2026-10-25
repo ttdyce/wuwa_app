@@ -1,63 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「暗潮將映的黎明」2.7版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「暗潮將映的黎明」2.7版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「暗潮將映的黎明」2.7版本內容說明</h1>
-          <span class="article-date">2025.10.09</span>
+          <span class="article-date">2025.10.09 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <p>親愛的漂泊者：<br>感謝您的持續關注！「暗潮將映的黎明」2.7版本內容介紹如下，還請漂泊者查閱。<br>&nbsp;<br><strong>【維護時間＆補償說明】</strong><br><strong>✦更新維護時間：<span style="color: rgb(224, 62, 45);">2025年10月9日04:00 ~ 2025年10月9日11:00（UTC+8）</span></strong><br><strong>✦更新維護補償：星聲*300、結晶溶劑*2</strong><br><strong>✦補償領取條件：2025年10月9日04:00（UTC+8）前創建角色且解鎖【郵件】功能，補償郵件領取有效期至下個版本更新維護前。</strong><br>※根據當日維護實際進程，維護時間可能出現延長的情況，項目組會對應實際情況進行追加公告說明和補償調整。<br>&nbsp;<br><strong>✦問題修復補償：星聲*300</strong><br><strong>✦補償領取條件：2025年10月9日04:00（UTC+8）前創建角色且解鎖【郵件】功能，補償郵件領取有效期至下個版本更新維護前。</strong></p>
           <p>&nbsp;</p>
-          <p><strong>【版本內容介紹】</strong><br><strong>✦全新角色✦</strong><br><strong>5星共鳴者「嘉貝莉娜」（熱熔 | 佩槍）</strong><br>外表冷峻，殺伐果斷，於索拉里斯四處遊獵的「獵魔人」，亦是人們口中「永火的惡魔」。<br>●戰鬥風格：【主力輸出】【重擊傷害】<br>※可透過[於灰燼中]角色活動喚取獲得。<br>&nbsp;<br><strong>5星共鳴者「仇遠」（氣動 | 迅刀）</strong><br>前明庭鎮撫司千戶，雙眼失明的獨行劍客。<br>少時仇人無算，長時辦差拿人，誰料蒙冤下獄，如今浪跡天涯。<br>●戰鬥風格：【快速協奏】【重擊傷害】【聲骸技能傷害加深】<br>※可透過[倦客不知身近遠]角色活動喚取獲得。<br>&nbsp;<br><strong>✦全新武器✦</strong><br><strong>5星武器「光影雙生」（佩槍）</strong><br>她自黑暗奪取力量，將罪惡加注其上，為狩獵，為殺戮，為給惡魔帶去決然致命的毀傷。<br>她自光明失墜隕落，將初誓銘刻其上，為逝者，為生者，為清晰自己的槍口該對準何方。<br>※可透過[浮聲沉兵・光影雙生]武器活動喚取獲得。<br>&nbsp;<br><strong>5星武器「裁竹」（迅刀）</strong><br>竹以虛而實，人因實而虛。<br>竹不虛言，不虛行，不虛名。竹能如此，人未必實。<br>※可透過[浮聲沉兵・裁竹]武器活動喚取獲得。<br>&nbsp;<br><strong>✦全新場景✦</strong><br><strong>「桑古伊斯狩原・三王峰」</strong><br>桑古伊斯狩原地理位置的最高處，因其三峰的外形及三位英雄王（法比烏、阿提留斯、薇利芮爾）曾造訪而得名。<br>※2.7版本更新後，解鎖「桑古伊斯狩原」即可前往。<br>&nbsp;<br><strong>「黑潮異域・巡遊天國」</strong><br>隱藏於黑潮之內的「另一個世界」。古老神明的陰暗低語自深淵傳來，似是此世一切惡意與恐懼的發源。<br>在那幽冥世界的盡頭，無瑕的天國正高懸於天空之中。死物們的巡禮仍在繼續，它們齊聲頌唱，日夜不息&mdash;&mdash;只為換來祂的恩典與救贖。<br>※跟隨【潮汐任務】第二章・第十一幕「暗潮將映的黎明」的任務指引即可前往。<br>&nbsp;<br><strong>✦全新聲骸✦</strong><br>「夢魘・綠熔蜥」、「夢魘・綠熔蜥（稚形）」、「夢魘・刺玫菇（稚形）」<br>&nbsp;<br>新增【夢魘祓除】：「三王峰夢魘聚落」<br>※【夢魘祓除】將每日刷新一定數量的夢魘殘象，無需消耗結晶波片即可在此獲得聲骸。<br>&nbsp;<br>●新增【合鳴套裝】：「焚羽獵魔之影」<br>「焚羽獵魔之影」（3件套）：角色造成聲骸技能傷害時，重擊傷害的暴擊提升20%，持續6秒；造成重擊傷害時，聲骸技能傷害的暴擊提升20%，持續6秒。同時擁有兩種效果時，自身熱熔傷害提升16%。<br>&nbsp;<br><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第十幕「已逝的必將歸來」</strong><br>為了打開英白拉多留下的舊物「文明之匣」，你與阿布準備前往拉古那尋找卡提希婭，卻發現拉古那的人們正遭受著夢魘的侵擾&hellip;&hellip;與此同時，顛倒塔阿維紐林之上，歸來的獵魔人也扣下了她的扳機。拉古那的海潮之下，暗流再度湧動，殘星會在黎那汐塔鋪陳的「故事」，也即將迎來收尾的終章。<br>✦開放時間：2.7版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第九幕「今夜，注定屬於月亮」後解鎖。<br>&nbsp;<br><strong>【潮汐任務】第二章・第十一幕「暗潮將映的黎明」</strong><br>預言中的「巡遊天國」即將降臨，為了阻止黎那汐塔邁向末日，你再次趕赴遠方的七丘之城。狩原的黑潮詭異爆發，但即便這片大地上已然不見神明的身姿，昔日的夥伴與黎那汐塔的人們也紛紛行動了起來，而承載著眾人意志的你，也毅然步入了黑潮之中&hellip;&hellip;去聯結起所有的希望吧，與「古老神明」的對決，終將上演。<br>✦開放時間：2.7版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十幕「已逝的必將歸來」後解鎖。<br>&nbsp;<br><strong>【幕間・潮汐續聞】「獨在異鄉為異客」</strong><br>在這場決定了黎那汐塔命運的決戰中，除了黎那汐塔人自己之外，一位遠涉重洋來到黎那汐塔的瑝瓏劍客也參與其中。他似乎受到了來自瑝瓏明庭的指引，來此協助你。他和許多參與到這場決戰中的人一樣，都是其中的一分子，只是獨屬於他自己的故事和過去，卻少有人知&hellip;&hellip;<br>✦開放時間：2025年10月30日10:00永久開放（伺服器時間）<br>✦開放條件：完成【潮汐任務】第二章・第十一幕「暗潮將映的黎明」後解鎖。<br>&nbsp;<br><strong>✦全新活動以及玩法✦</strong><br><strong>【版本活動】：</strong><br><strong>[悲鳴行動：索拉戰士]戰鬥活動</strong><br>為了預防未來可能出現的，與黑潮同類的海蝕現象，黑海岸與黎那汐塔協調達成了一項合作：透過全景模擬裝置，在可能受到鳴式力量影響的地區進行演習。因此，他們邀請你與自己可靠的夥伴一起，幫忙測試這次的特殊演習裝置。<br>✦活動時間：2025年10月11日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[七丘氣象前沿]限時跑酷收集活動</strong><br>黑海岸的機器人庫里安正在尋求黑海岸人員的協助，收集七丘地區的海蝕現象監測數據。如果感興趣的話，不如去找他聊聊吧。<br>✦活動時間：2025年10月16日04:00 ~ 2025年10月30日03:59（伺服器時間）<br>&nbsp;<br><strong>[定格・光影瞬息]戰鬥拍照活動</strong><br>鐺鐺鐺&mdash;&mdash;潮汐影像特別企劃・共鳴者戰鬥篇，堂堂開啟！<br>捕捉共鳴者們戰鬥的閃耀瞬間，提交給斐林和西莫斯先生，可換取各類獎勵！<br>✦活動時間：2025年10月30日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[嗚嗚企劃・融冰]限時委託活動</strong><br>完成每日任務即可獲得嗚嗚物流的謝禮&mdash;&mdash;「嗚嗚郵幣」。「嗚嗚郵幣」可用於兌換嗚嗚物流回贈的「助嗚為樂」特別郵遞。<br>✦活動時間：2025年11月6日04:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[黎明贈禮]七日簽到活動</strong><br>活動開啟期間，每日登入遊戲，即可前往活動介面領取對應天數的簽到獎勵。<br>✦活動時間：2.7版本更新後 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[墨影鳳歌]限時簽到活動</strong><br>活動開啟期間，每日登入遊戲，即可前往活動介面領取對應天數的簽到獎勵。<br>✦活動時間：2025年10月30日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>✦其他全新內容✦</strong><br>●「全像戰略・幻痛」挑戰內容：「榮耀獅像」<br>●【羈旅印章】：「『燈塔與黑花』特別勛章」<br>●【頭像】：「燈塔與黑花」<br>※「『燈塔與黑花』特別勛章」、「燈塔與黑花」可透過參與[悲鳴行動：索拉戰士]戰鬥活動獲得。<br>&nbsp;</p>
+          <p><strong>【版本內容介紹】</strong><br><strong>✦全新角色✦</strong><br><strong>5星共鳴者「嘉貝莉娜」（熱熔 | 佩槍）</strong><br>外表冷峻，殺伐果斷，於索拉里斯四處遊獵的「獵魔人」，亦是人們口中「永火的惡魔」。<br>●戰鬥風格：【主力輸出】【重擊傷害】<br>※可透過[於灰燼中]角色活動喚取獲得。<br>&nbsp;<br><strong>5星共鳴者「仇遠」（氣動 | 迅刀）</strong><br>前明庭鎮撫司千戶，雙眼失明的獨行劍客。<br>少時仇人無算，長時辦差拿人，誰料蒙冤下獄，如今浪跡天涯。<br>●戰鬥風格：【快速協奏】【重擊傷害】【聲骸技能傷害加深】<br>※可透過[倦客不知身近遠]角色活動喚取獲得。<br>&nbsp;<br><strong>✦全新武器✦</strong><br><strong>5星武器「光影雙生」（佩槍）</strong><br>她自黑暗奪取力量，將罪惡加注其上，為狩獵，為殺戮，為給惡魔帶去決然致命的毀傷。<br>她自光明失墜隕落，將初誓銘刻其上，為逝者，為生者，為清晰自己的槍口該對準何方。<br>※可透過[浮聲沉兵・光影雙生]武器活動喚取獲得。<br>&nbsp;<br><strong>5星武器「裁竹」（迅刀）</strong><br>竹以虛而實，人因實而虛。<br>竹不虛言，不虛行，不虛名。竹能如此，人未必實。<br>※可透過[浮聲沉兵・裁竹]武器活動喚取獲得。<br>&nbsp;<br><strong>✦全新場景✦</strong><br><strong>「桑古伊斯狩原・三王峰」</strong><br>桑古伊斯狩原地理位置的最高處，因其三峰的外形及三位英雄王（法比烏、阿提留斯、薇利芮爾）曾造訪而得名。<br>※2.7版本更新後，解鎖「桑古伊斯狩原」即可前往。<br>&nbsp;<br><strong>「黑潮異域・巡遊天國」</strong><br>隱藏於黑潮之內的「另一個世界」。古老神明的陰暗低語自深淵傳來，似是此世一切惡意與恐懼的發源。<br>在那幽冥世界的盡頭，無瑕的天國正高懸於天空之中。死物們的巡禮仍在繼續，它們齊聲頌唱，日夜不息——只為換來祂的恩典與救贖。<br>※跟隨【潮汐任務】第二章・第十一幕「暗潮將映的黎明」的任務指引即可前往。<br>&nbsp;<br><strong>✦全新聲骸✦</strong><br>「夢魘・綠熔蜥」、「夢魘・綠熔蜥（稚形）」、「夢魘・刺玫菇（稚形）」<br>&nbsp;<br>新增【夢魘祓除】：「三王峰夢魘聚落」<br>※【夢魘祓除】將每日刷新一定數量的夢魘殘象，無需消耗結晶波片即可在此獲得聲骸。<br>&nbsp;<br>●新增【合鳴套裝】：「焚羽獵魔之影」<br>「焚羽獵魔之影」（3件套）：角色造成聲骸技能傷害時，重擊傷害的暴擊提升20%，持續6秒；造成重擊傷害時，聲骸技能傷害的暴擊提升20%，持續6秒。同時擁有兩種效果時，自身熱熔傷害提升16%。<br>&nbsp;<br><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第十幕「已逝的必將歸來」</strong><br>為了打開英白拉多留下的舊物「文明之匣」，你與阿布準備前往拉古那尋找卡提希婭，卻發現拉古那的人們正遭受著夢魘的侵擾……與此同時，顛倒塔阿維紐林之上，歸來的獵魔人也扣下了她的扳機。拉古那的海潮之下，暗流再度湧動，殘星會在黎那汐塔鋪陳的「故事」，也即將迎來收尾的終章。<br>✦開放時間：2.7版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第九幕「今夜，注定屬於月亮」後解鎖。<br>&nbsp;<br><strong>【潮汐任務】第二章・第十一幕「暗潮將映的黎明」</strong><br>預言中的「巡遊天國」即將降臨，為了阻止黎那汐塔邁向末日，你再次趕赴遠方的七丘之城。狩原的黑潮詭異爆發，但即便這片大地上已然不見神明的身姿，昔日的夥伴與黎那汐塔的人們也紛紛行動了起來，而承載著眾人意志的你，也毅然步入了黑潮之中……去聯結起所有的希望吧，與「古老神明」的對決，終將上演。<br>✦開放時間：2.7版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十幕「已逝的必將歸來」後解鎖。<br>&nbsp;<br><strong>【幕間・潮汐續聞】「獨在異鄉為異客」</strong><br>在這場決定了黎那汐塔命運的決戰中，除了黎那汐塔人自己之外，一位遠涉重洋來到黎那汐塔的瑝瓏劍客也參與其中。他似乎受到了來自瑝瓏明庭的指引，來此協助你。他和許多參與到這場決戰中的人一樣，都是其中的一分子，只是獨屬於他自己的故事和過去，卻少有人知……<br>✦開放時間：2025年10月30日10:00永久開放（伺服器時間）<br>✦開放條件：完成【潮汐任務】第二章・第十一幕「暗潮將映的黎明」後解鎖。<br>&nbsp;<br><strong>✦全新活動以及玩法✦</strong><br><strong>【版本活動】：</strong><br><strong>[悲鳴行動：索拉戰士]戰鬥活動</strong><br>為了預防未來可能出現的，與黑潮同類的海蝕現象，黑海岸與黎那汐塔協調達成了一項合作：透過全景模擬裝置，在可能受到鳴式力量影響的地區進行演習。因此，他們邀請你與自己可靠的夥伴一起，幫忙測試這次的特殊演習裝置。<br>✦活動時間：2025年10月11日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[七丘氣象前沿]限時跑酷收集活動</strong><br>黑海岸的機器人庫里安正在尋求黑海岸人員的協助，收集七丘地區的海蝕現象監測數據。如果感興趣的話，不如去找他聊聊吧。<br>✦活動時間：2025年10月16日04:00 ~ 2025年10月30日03:59（伺服器時間）<br>&nbsp;<br><strong>[定格・光影瞬息]戰鬥拍照活動</strong><br>鐺鐺鐺——潮汐影像特別企劃・共鳴者戰鬥篇，堂堂開啟！<br>捕捉共鳴者們戰鬥的閃耀瞬間，提交給斐林和西莫斯先生，可換取各類獎勵！<br>✦活動時間：2025年10月30日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[嗚嗚企劃・融冰]限時委託活動</strong><br>完成每日任務即可獲得嗚嗚物流的謝禮——「嗚嗚郵幣」。「嗚嗚郵幣」可用於兌換嗚嗚物流回贈的「助嗚為樂」特別郵遞。<br>✦活動時間：2025年11月6日04:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[黎明贈禮]七日簽到活動</strong><br>活動開啟期間，每日登入遊戲，即可前往活動介面領取對應天數的簽到獎勵。<br>✦活動時間：2.7版本更新後 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>[墨影鳳歌]限時簽到活動</strong><br>活動開啟期間，每日登入遊戲，即可前往活動介面領取對應天數的簽到獎勵。<br>✦活動時間：2025年10月30日10:00 ~ 2025年11月19日03:59（伺服器時間）<br>&nbsp;<br><strong>✦其他全新內容✦</strong><br>●「全像戰略・幻痛」挑戰內容：「榮耀獅像」<br>●【羈旅印章】：「『燈塔與黑花』特別勛章」<br>●【頭像】：「燈塔與黑花」<br>※「『燈塔與黑花』特別勛章」、「燈塔與黑花」可透過參與[悲鳴行動：索拉戰士]戰鬥活動獲得。<br>&nbsp;</p>
           <p>&nbsp;</p>
           <div><strong>【版本調整優化】</strong><br><strong>✦角色&amp;武器✦</strong><br><strong>●共鳴者培養方案：</strong><br><strong>新增【共鳴者培養方案】功能</strong><br>- 可透過【終端】-【共鳴者】-【培養方案】進入功能介面。<br>- 根據當前漂泊者的最大【索拉等級】將配對不同的培養方案，在選擇共鳴者角色後，可分別查看4個養成類別，【角色】、【武器】、【聲骸】、【技能】的推薦內容以及培養方案詳情，並且可以透過培養方案內的【前往】按鈕快速找到對應養成材料的產出管道。<br>- 【培養方案】的共鳴者列表處將標注【當期】角色活動喚取對應角色以及【預告】角色，【預告】角色將在臨近實裝前公開部分培養方案詳情。</div>
           <div>&nbsp;</div>
@@ -84,7 +74,7 @@
           <div><strong>●多人遊戲：</strong><br>優化調整【多人遊戲】介面顯示與功能<br>- 新增多人遊戲的彈出框提示資訊，當處於多人遊戲模式中但隊伍中沒有隊友時，會提示當前處於多人遊戲模式，關閉該彈出框則會在之後的固定時間再次提示。<br>- 新增多人遊戲進行副本挑戰時的介面提示資訊，將會提示目前副本的推薦等級。<br>- 新增多人遊戲介面的【刷新列表】功能，可點擊按鈕刷新目前的玩家列表。</div>
           <div>- 優化調整【聲骸培養】介面功能，除【聲骸強化】、【聲骸調諧】外將新增【數據重構】功能入口，可在此介面進行聲骸的數據重構操作。<br>- 優化調整【數據重構】介面功能，在完成聲骸數據重構後，新增【聲骸培養】功能的快捷跳轉入口。<br>- 優化調整【戰歌重奏】挑戰介面顯示，以及挑戰完成後的彈出視窗資訊顯示，將會提示剩餘可收取次數。<br>- 優化調整武器培養的【諧振】介面功能，部分僅能透過消耗特定材料進行諧振的武器（如血誓盟約）在【諧振】介面將直接顯示特定材料的消耗情況。<br>- 優化調整【夢魘祓除】中，夢魘聚落所產出聲骸的圖示顯示，將在夢魘聲骸圖示右下角標注該聲骸所對應的合鳴套裝。<br>- 優化調整[初露崢嶸]角色試用中出招表的顯示效果，並新增關於【戰鬥特色】的說明。<br>- 優化調整【地圖】介面右上角【逆境深塔】圖示功能，將調整為【週期活動】相關資訊的匯總介面，可顯示週期活動剩餘時間以及完成進度。<br>- 優化調整使用【武器補給箱】的自選操作介面，將會在對應武器圖示後額外顯示該武器的類型。<br>- 優化調整在進行【聲骸強化】、【聲骸調諧】以及【武器強化】因強化材料溢出獲得材料轉化時的彈出框資訊與功能，在獲得材料轉化時將不再彈出資訊而是在畫面左下角顯示。</div>
           <div>&nbsp;</div>
-          <div><strong>✦圖像&amp;性能✦</strong><br><strong>●圖像設定</strong><br>優化調整【全局濾鏡】選項<br>- 除已經開放該選項的PC端/PS5&trade;/Mac端設備外，新增行動端設備可開啟【全局濾鏡】選項設定。<br>- 可在【設定】-【圖像】-【圖像顯示模式】處切換至【全局濾鏡】，並點擊【全局濾鏡設定】打開設定介面。<br>- 除已經開放的【調色盤】效果設定選項外，將新增【高級參數】設定選項，原有的圖像顏色設定中的【亮度】、【飽和度】、【對比度】選項被合併至此處，且可以調整更多類型的選項設定。<br>- 介面UI與演出效果不會受到【全局濾鏡】的影響。</div>
+          <div><strong>✦圖像&amp;性能✦</strong><br><strong>●圖像設定</strong><br>優化調整【全局濾鏡】選項<br>- 除已經開放該選項的PC端/PS5™/Mac端設備外，新增行動端設備可開啟【全局濾鏡】選項設定。<br>- 可在【設定】-【圖像】-【圖像顯示模式】處切換至【全局濾鏡】，並點擊【全局濾鏡設定】打開設定介面。<br>- 除已經開放的【調色盤】效果設定選項外，將新增【高級參數】設定選項，原有的圖像顏色設定中的【亮度】、【飽和度】、【對比度】選項被合併至此處，且可以調整更多類型的選項設定。<br>- 介面UI與演出效果不會受到【全局濾鏡】的影響。</div>
           <div>新增【護眼模式】選項<br>- 可在【設定】-【圖像】-【圖像顯示模式】處切換【全局濾鏡】與【護眼模式】。（※請注意【全局濾鏡】與【護眼模式】僅能選擇其一開啟，不可同時開啟。）<br>- 可在【強光】、【弱光】、【自訂】中選擇方案，【強光】與【弱光】為預設方案，【自訂】方案可以在一定範圍內調整色溫、護眼強度、亮度、紋理強度等畫面效果，漂泊者可根據所處遊玩環境的光線情況自行選擇。<br>- 介面UI與演出效果不會受到【護眼模式】的影響。</div>
           <div>優化調整【自動調節】選項<br>- 除已經開放該選項的Android端設備外，PC端設備也可開啟【自動調節】選項設定。<br>- 開啟該選項後，將會根據目前的運行情況（如硬體設備溫度較高/幀率波動等）自動降低渲染參數以減少運行壓力，待運行情況穩定後會將渲染參數還原。<br>※當【性能負載】提示條顯示性能負載過高時，將會有彈出框資訊建議您調整圖像設定或開啟自動調節功能。</div>
           <div>- 新增PC端設備下，部分角色的技能與落葉的交互效果，將會有更豐富的交互表現。<br>- 優化調整【圖形品質預設】選項功能，在硬體設備支持的情況下，所有的預設方案都將預設開啟【DLSS】選項。<br>- 優化調整PC端設備下，部分角色收刀動作與草地的物理交互效果。</div>
@@ -103,8 +93,22 @@
           <p><strong>●場景</strong><br>- 修復了在開啟【光線追蹤】效果後，有機率出現目前場景內部分鏡面反射效果或場景陰影效果表現異常的問題。<br>- 修復了在使用PC端設備時，使用【快速旅行】功能從【桑古伊斯狩原】前往【瑝瓏】區域後，有機率出現目前場景畫質降低或水面反射效果表現異常等問題。<br>- 修復了在【瑝瓏】-【歸墟港市】特定區域內，會出現角色可異常在空中攀爬或行走的問題。<br><br></p>
           </div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

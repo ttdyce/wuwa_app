@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「日以灼鋒，月以流明」2.6版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「日以灼鋒，月以流明」2.6版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「日以灼鋒，月以流明」2.6版本內容說明</h1>
-          <span class="article-date">2025.08.28</span>
+          <span class="article-date">2025.08.28 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <p>&nbsp;</p>
@@ -65,11 +55,11 @@
           <div>
           <p><strong>【版本內容介紹】</strong><br><strong>✦全新角色✦</strong><br><strong>5星共鳴者「奧古斯塔」（導電 | 長刃）</strong><br>七丘的現任總督。長照不滅的烈陽，所向披靡的旗幟。<br>她來，她見，她征服。<br>她高擎鋒刃，等待著下一個挑戰者，抑或是無可抗拒的命運。<br>●戰鬥風格：【主力輸出】【重擊傷害】【傷害加深】<br>※可透過[不墜烜冕]角色活動喚取獲得。</p>
           <p>&nbsp;</p>
-          <p><strong>5星共鳴者「尤諾」（氣動 | 臂鎧）</strong><br>她被命運以怎樣的名義青睞，就被命運以怎樣的方式裹挾。<br>但她從未被打敗，也不肯甘休。<br>所以，看吧&hellip;&hellip;看忤逆的諭女，因何不再回望，看萬千因果之間，她如何以自己為唯一的解。<br>●戰鬥風格：【生存治療】【快速協奏】【共鳴解放傷害】【重擊傷害加深】<br>※可透過[漫於盈缺時軸]角色活動喚取獲得。</p>
+          <p><strong>5星共鳴者「尤諾」（氣動 | 臂鎧）</strong><br>她被命運以怎樣的名義青睞，就被命運以怎樣的方式裹挾。<br>但她從未被打敗，也不肯甘休。<br>所以，看吧……看忤逆的諭女，因何不再回望，看萬千因果之間，她如何以自己為唯一的解。<br>●戰鬥風格：【生存治療】【快速協奏】【共鳴解放傷害】【重擊傷害加深】<br>※可透過[漫於盈缺時軸]角色活動喚取獲得。</p>
           <p>&nbsp;</p>
           <p><strong>✦全新武器✦</strong><br><strong>5星武器「馭冕鑄雷之權」（長刃）</strong><br>雷霆會灼淨她的沉疴與軟弱，在那由血與砂鑄成的熔爐中，她將不再是塵埃，而是輝煌奪目的太陽。<br>※可透過[浮聲沉兵・馭冕鑄雷之權]武器活動喚取獲得。</p>
           <p>&nbsp;</p>
-          <p><strong>5星武器「萬物持存的注釋」（臂鎧）</strong><br>萬物以何持存？以光熱、以實質、以言語，以推演偶合的運作，以破碎沉沒的輕吻，以仿佛永續的瞬間&hellip;&hellip;萬物往復更迭，均有各自的注解，而她的，就在此處，就握在自己手中。<br>※可透過[浮聲沉兵・萬物持存的注釋]武器活動喚取獲得。</p>
+          <p><strong>5星武器「萬物持存的注釋」（臂鎧）</strong><br>萬物以何持存？以光熱、以實質、以言語，以推演偶合的運作，以破碎沉沒的輕吻，以仿佛永續的瞬間……萬物往復更迭，均有各自的注解，而她的，就在此處，就握在自己手中。<br>※可透過[浮聲沉兵・萬物持存的注釋]武器活動喚取獲得。</p>
           <p>&nbsp;</p>
           <p><strong>4星武器「逐獵之咆」系列：「金穹」（長刃）、「翼鋒」（迅刀）、「陽焰」（佩槍）、「凌空」（臂鎧）、「曜光」（音感儀）</strong><br>武器上的雕紋以狩王鷲為原型設計。狩王鷲是天生的獵手，也是七丘人在這片土地上最初的夥伴。這份情誼無需用筆墨錨定，它永不蒙塵，永遠如灼日般璀璨高潔。<br>※4星武器「逐獵之咆」系列可透過在[先約電臺]活動期間購買解鎖【寰宇頻道】或【寰宇特約】後，開啟【寰宇開拓物資箱】自選獲得。</p>
           <p>&nbsp;</p>
@@ -79,9 +69,9 @@
           <p>新增【夢魘祓除】：「潮痕岩灘夢魘聚落」、「受蝕地夢魘聚落」<br>※每日刷新一定數量的夢魘殘象，無需消耗結晶波片即可在此獲得聲骸。</p>
           <p>●新增【合鳴套裝】：「榮鬥鑄鋒之冠」、「息界同調之律」<br>「榮鬥鑄鋒之冠」（3件套）：角色獲得護盾時，自身攻擊提升6%，暴擊傷害提升4%，該效果可疊加5層，持續4秒，每0.5秒可觸發一次。<br>「息界同調之律」（3件套）：角色施放聲骸技能時，自身重擊傷害加成提升30%，持續4秒；隊伍中角色聲骸技能傷害加成提升4%，該效果可疊加4層，持續30秒，同名聲骸僅可觸發1次該效果，效果消失時重置同名聲骸記錄，4層時施放聲骸技能可刷新持續時間。</p>
           <p>&nbsp;</p>
-          <p><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第八幕「灼我以烈陽」</strong><br>黑潮的漲潮期即將來臨，潛藏於陰影中的災厄正悄然窺伺著七丘的疆界。總督奧古斯塔發出召令，邀你前往桑古伊斯狩原參與一場關乎七丘存亡的狩獵。為了取回歲主英白拉多遺存在狩原的舊物，亦為阻止黑潮再度侵襲黎那汐塔，你與七丘的角鬥士們一同踏上了獵途&hellip;&hellip;<br>✦開放時間：2.6版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第七幕「捕夢於神秘園中」後解鎖。</p>
+          <p><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第八幕「灼我以烈陽」</strong><br>黑潮的漲潮期即將來臨，潛藏於陰影中的災厄正悄然窺伺著七丘的疆界。總督奧古斯塔發出召令，邀你前往桑古伊斯狩原參與一場關乎七丘存亡的狩獵。為了取回歲主英白拉多遺存在狩原的舊物，亦為阻止黑潮再度侵襲黎那汐塔，你與七丘的角鬥士們一同踏上了獵途……<br>✦開放時間：2.6版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第七幕「捕夢於神秘園中」後解鎖。</p>
           <p>&nbsp;</p>
-          <p><strong>【潮汐任務】第二章・第九幕「今夜，注定屬於月亮」</strong><br>神王已死，名為布里奧的禮官邀你重返營地，參與為新誕生的英雄王、也為每一位與他並肩同行者所設的慶典。篝火搖曳，歡聲漫響&hellip;&hellip;或許，在萬千花瓣被眾人拋灑、化作榮耀與凱旋的花雨以前，你終會以某種命運未曾告知的方式，再見那你從未忘卻的少女一面。<br>✦開放時間：2025年9月17日10:00永久開放（伺服器時間）<br>✦開放條件：完成【潮汐任務】第二章・第八幕「灼我以烈陽」後解鎖。</p>
+          <p><strong>【潮汐任務】第二章・第九幕「今夜，注定屬於月亮」</strong><br>神王已死，名為布里奧的禮官邀你重返營地，參與為新誕生的英雄王、也為每一位與他並肩同行者所設的慶典。篝火搖曳，歡聲漫響……或許，在萬千花瓣被眾人拋灑、化作榮耀與凱旋的花雨以前，你終會以某種命運未曾告知的方式，再見那你從未忘卻的少女一面。<br>✦開放時間：2025年9月17日10:00永久開放（伺服器時間）<br>✦開放條件：完成【潮汐任務】第二章・第八幕「灼我以烈陽」後解鎖。</p>
           <p>&nbsp;</p>
           <p><strong>✦全新活動以及玩法✦</strong><br><strong>【版本活動】：</strong><br><strong>「桑古伊斯狩原」區域系列活動</strong><br>參與[燼與鐵之狩]區域探索活動，緊隨探索引導，獲得活動獎勵。<br>參與[行旅圖集・桑古伊斯狩原]限時探索度活動，提升新區域探索度，獲得星聲和特級調諧器獎勵。<br>參與[狩原逐影]留影收集活動，探索「桑古伊斯狩原」，留下美好瞬間。<br>✦活動時間：2.6版本更新後 ~ 2025年10月8日03:59（伺服器時間）</p>
           <p>&nbsp;</p>
@@ -114,7 +104,7 @@
           <div><strong>●獎勵領取：</strong><br><strong>優化調整【獎勵領取】功能</strong><br>- 新增【一鍵領取】功能，在介面內點擊【領取】獎勵時，將直接領取當前介面內所有可領取的獎勵內容。<br>- 該優化內容適用於【索拉指南】、【數據塢】以及大部分的玩法、活動介面下的使用場景。</div>
           <div>&nbsp;</div>
           <div><strong>✦玩法&amp;活動✦</strong><br><strong>●【冥歌海墟】：</strong><br><strong>優化調整【冥歌海墟】部分內容</strong><br>- 新增【挑戰記錄覆寫】功能。【挑戰記錄覆寫】詳細規則請前往遊戲內【冥歌海墟】相關介面查看。<br>- 優化調整【焚潮】系統為【焚燼】系統，在挑戰【再生海域-海隙】和【再生海域-湍淵】時可透過戰鬥操作獲取焚燼值，焚燼值積攢滿後可以啟動強大的焚潮效果。<br>- 優化調整【冥歌海墟】挑戰介面，新增【切換編隊】快捷按鈕。<br>- 優化調整活動介面中【冥歌海墟】的介面顯示，將顯示當期【再生海域-海隙】和【再生海域-湍淵】的挑戰進度。</div>
-          <div><br><strong>●【逆境深塔】：</strong><br><strong>優化調整【逆境深塔】部分內容</strong><br>- 新增【挑戰記錄覆寫】功能。【挑戰記錄覆寫】詳細規則請前往遊戲內【逆境深塔】相關介面查看。<br>- 新增【深境區 &middot; 深境之塔】第3層與第4層的挑戰內容，達成所有挑戰目標獲得滿印記後可額外獲得星聲*100、貝幣*100000、深境記錄*240。<br>- 優化調整【超載區】的開放條件，無需通關【深境區】，只需通關【穩定區】和【實驗區】後即可開放。</div>
+          <div><br><strong>●【逆境深塔】：</strong><br><strong>優化調整【逆境深塔】部分內容</strong><br>- 新增【挑戰記錄覆寫】功能。【挑戰記錄覆寫】詳細規則請前往遊戲內【逆境深塔】相關介面查看。<br>- 新增【深境區 · 深境之塔】第3層與第4層的挑戰內容，達成所有挑戰目標獲得滿印記後可額外獲得星聲*100、貝幣*100000、深境記錄*240。<br>- 優化調整【超載區】的開放條件，無需通關【深境區】，只需通關【穩定區】和【實驗區】後即可開放。</div>
           <div>&nbsp;</div>
           <div><strong>●【千道門扉的異想】：</strong><br><strong>優化調整【千道門扉的異想】部分內容</strong><br>- 新增【千道門扉的異想】部分全新【隱喻】效果。<br>- 新增挑戰進度第14層「深層記憶區」挑戰，該挑戰中怪物血量會大幅提升，完成後可獲得額外積分，在完成挑戰進度第13層後可選擇進入。<br>- 優化調整【千道門扉的異想】部分已有的【隱喻】效果。<br>- 優化調整「明晰夢狀態」為「解夢狀態」，在挑戰中【夢境能量】充滿後可主動觸發，「解夢狀態」下特定【隱喻】效果會獲得提升，全隊會獲得強力的加成效果。<br>- 優化調整【千道門扉的異想】在玩法介面的顯示內容，將展示當期【夢境援護】加成效果。<br>- 優化調整【千道門扉的異想】挑戰介面，將會在編隊欄標識出隊伍中的積分加成共鳴者角色。<br>※以上【千道門扉的異想】相關優化調整將在2025年9月1日04:00（伺服器時間）開放的全新一期【千道門扉的異想】中反映。</div>
           <div>&nbsp;</div>
@@ -123,7 +113,7 @@
           <div>&nbsp;</div>
           <div><strong>✦操控✦</strong><br><strong>●鍵鼠模式</strong><br>- 新增各類【全螢幕提示介面】的快捷鍵操作。如遊戲標題介面的【點擊連線】操作介面、共鳴者完成強化後的提示介面、道具獲得的提示介面、領取【月相觀測卡】獎勵的提示介面等，除【點擊空白區域關閉】的操作方式外，還可以使用【空白鍵】進行快捷關閉或繼續操作。</div>
           <div>&nbsp;</div>
-          <div><strong>●手把模式</strong><br>- 新增DualSense&reg;、DualSense Edge&trade;手把控制器的自適應扳機硬體特性。目前僅在[潮蝕模擬]殘象防禦主題活動中的【輔助機】射擊場景下可以使用。</div>
+          <div><strong>●手把模式</strong><br>- 新增DualSense®、DualSense Edge™手把控制器的自適應扳機硬體特性。目前僅在[潮蝕模擬]殘象防禦主題活動中的【輔助機】射擊場景下可以使用。</div>
           <div>&nbsp;</div>
           <div><strong>✦介面✦</strong><br>- 優化調整【聲骸推薦】介面中部分詞條的高亮顯示規則。<br>- 優化調整「全像戰略・幻痛」挑戰的介面顯示，在「全像戰略・幻痛」頁面將顯示當期新增的挑戰對象與目前挑戰進度。<br>- 優化調整[初露崢嶸]角色試用，在完成試用後的彈出視窗中將可以選擇【重新挑戰】。<br>- 優化調整[初露崢嶸]角色詳情介面，將顯示共鳴者角色的【戰鬥風格】。</div>
           <div>&nbsp;</div>
@@ -153,8 +143,22 @@
           <div><strong>●場景</strong><br>- 修復了在使用【快速旅行】功能前往【黎那汐塔】-【隱海試驗場】區域時，有機率出現異常掉落至地圖外的問題。<br>- 修復了在【黎那汐塔】-【隱海試驗場】區域內使用【翱翔】功能時，有機率出現場景光效閃爍或場景載入異常的問題。<br>- 修復了【黎那汐塔】-【隱海試驗場】區域內的NPC「『服事人』巴德勒」圖示有誤的問題。<br>- 修復了在使用Mac設備時，【黎那汐塔】-【七丘】區域內部分場景會出現草地模型表現異常的問題。<br>- 修復了在【黎那汐塔】-【七丘】-【卡庇托山】特定區域內，角色可以異常浮空站立的問題。<br>- 修復了【黎那汐塔】-【贊悼聖跡】區域內的部分礦石模型陷入地下的問題。<br>- 修復了在【黎那汐塔】-【埃弗拉德金庫】特定區域內，會異常出現被阻擋導致無法前進的問題。<br>- 修復了【瑝瓏】-【中曲臺地】特定區域內部分場景的山體模型位置異常的問題。</div>
           </div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「奔往琥珀之都」2.8版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「奔往琥珀之都」2.8版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「奔往琥珀之都」2.8版本內容說明</h1>
-          <span class="article-date">2025.11.20</span>
+          <span class="article-date">2025.11.20 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <p>親愛的漂泊者：<br>感謝您的持續關注！「奔往琥珀之都」2.8版本內容介紹如下，還請漂泊者查閱。</p>
@@ -65,16 +55,16 @@
           <div>&nbsp;</div>
           <div><strong>✦全新武器✦</strong><br><strong>5星武器「曇切」（長刃）</strong><br>緋紅絲縷浮現於虛空，仿佛將萬物的骨架牽引在同一根弦線之上。<br>永無止境的漫長季節在她的指尖被拉緊、剪斷，繼而重新編織，支離的軌跡終於再度匯入這一時間線。<br>※可透過[浮聲沉兵・曇切]武器活動喚取獲得。</div>
           <div>&nbsp;</div>
-          <div><strong>✦全新區域✦</strong><br><strong>「時隙廢都」</strong><br>如琥珀般封存在索諾拉中的廢墟都市，昔日繁華的商業建築長滿荒草，低地道路被海水浸沒。悲鳴周而復始，時空支離破碎，此間的景色卻仿佛永恆&hellip;&hellip;<br>※跟隨【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」的任務指引即可前往。</div>
+          <div><strong>✦全新區域✦</strong><br><strong>「時隙廢都」</strong><br>如琥珀般封存在索諾拉中的廢墟都市，昔日繁華的商業建築長滿荒草，低地道路被海水浸沒。悲鳴周而復始，時空支離破碎，此間的景色卻仿佛永恆……<br>※跟隨【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」的任務指引即可前往。</div>
           <div>&nbsp;</div>
-          <div><strong>✦全新聲骸✦</strong><br>「夢魘&middot;刺玫菇」、「夢魘・嗚咔咔」、「夢魘・侏侏鴕」</div>
+          <div><strong>✦全新聲骸✦</strong><br>「夢魘·刺玫菇」、「夢魘・嗚咔咔」、「夢魘・侏侏鴕」</div>
           <div>&nbsp;</div>
           <div>新增【夢魘祓除】：「穗波市夢魘聚落」<br>※【夢魘祓除】將每日刷新一定數量的夢魘殘象，無需消耗結晶波片即可在此獲得聲骸。</div>
           <div>&nbsp;</div>
           <div>●新增【合鳴套裝】：「命理崩毀之弦」<br>「命理崩毀之弦」（3件套）：角色為敵人添加【虛湮效應】時，自身攻擊提升20%，共鳴解放傷害加成提升30%，持續5秒。</div>
           <div>&nbsp;</div>
-          <div><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」</strong><br>黎那汐塔的一系列事件已然落幕，你再度回到黑海岸群島，發現黑海岸正在探查近海區域的異常頻率。在調查中，你意外來到了一座動盪不安的荒廢都市。在一切走向崩毀的時刻，一位神祕的黑髮少女出現在你的面前&hellip;&hellip;在這個永恆的時節，斬斷無盡的循環，迎接未來的曙光。<br>✦開放時間：2.8版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十一幕「暗潮將映的黎明」後解鎖。</div>
-          <div>【潮汐任務】第二章・幕間「星光流轉於眼眸之間」<br>穗波市的危機告一段落，千咲在黑海岸接受了封閉治療。你們就此分別了一段時間，現在是時候去看看她的情況了&hellip;&hellip;無論是對於她，還是對於你，這都將是一個新的開始。那些平凡而溫暖的牽絆、隱於心底的話語，將化作指引前路的星光。<br>✦開放時間：2.8版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」後解鎖。</div>
+          <div><strong>✦全新劇情✦</strong><br><strong>【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」</strong><br>黎那汐塔的一系列事件已然落幕，你再度回到黑海岸群島，發現黑海岸正在探查近海區域的異常頻率。在調查中，你意外來到了一座動盪不安的荒廢都市。在一切走向崩毀的時刻，一位神祕的黑髮少女出現在你的面前……在這個永恆的時節，斬斷無盡的循環，迎接未來的曙光。<br>✦開放時間：2.8版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十一幕「暗潮將映的黎明」後解鎖。</div>
+          <div>【潮汐任務】第二章・幕間「星光流轉於眼眸之間」<br>穗波市的危機告一段落，千咲在黑海岸接受了封閉治療。你們就此分別了一段時間，現在是時候去看看她的情況了……無論是對於她，還是對於你，這都將是一個新的開始。那些平凡而溫暖的牽絆、隱於心底的話語，將化作指引前路的星光。<br>✦開放時間：2.8版本更新後永久開放<br>✦開放條件：完成【潮汐任務】第二章・第十二幕「曙光停擺於荒地之上」後解鎖。</div>
           <div>&nbsp;</div>
           <div><strong>✦全新活動以及玩法✦</strong></div>
           <div><strong>【版本活動】：</strong><br><strong>[穗波怪異物語]戰鬥活動</strong><br>在穗波怪異物語中，漂泊者將進入穗波市進行探索，並隨著故事的推進逐步探索城市中的怪異謎團。<br>✦活動時間：2.8版本更新後 ~ 2025年12月24日11:59（伺服器時間）</div>
@@ -146,8 +136,22 @@
           <div>&nbsp;</div>
           <p>&nbsp;</p>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

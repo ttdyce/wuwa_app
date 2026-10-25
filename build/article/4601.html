@@ -1,58 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"/>
-    <meta name="theme-color" content="#0a0e1a"/>
-    <style>@import url(style.css);</style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=wave"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=wave"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=wave"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=wave"/>
+    <meta name="theme-color" content="#111411"/>
+    <style>@import url(/style.css);</style>
     <!--$-->
     <title>「自星海盡處迴響」3.3版本內容說明 — wuwa.app</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="「自星海盡處迴響」3.3版本內容說明 — 鳴潮官方情報，收錄於 wuwa.app 非官方玩家情報站。"/>
     <!--/-->
   </head>
   <body>
     <div class="app">
-      <div class="particles">
-        <div class="particle particle-0"></div>
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
-        <div class="particle particle-4"></div>
-        <div class="particle particle-5"></div>
-        <div class="particle particle-6"></div>
-        <div class="particle particle-7"></div>
-        <div class="particle particle-8"></div>
-        <div class="particle particle-9"></div>
-        <div class="particle particle-10"></div>
-        <div class="particle particle-11"></div>
-        <div class="particle particle-12"></div>
-        <div class="particle particle-13"></div>
-        <div class="particle particle-14"></div>
-      </div>
+      <a class="skip-link" href="#main-content">跳至主要內容</a>
       <header class="site-header">
         <div class="header-inner">
-          <a class="logo-link" href="/">
-            <span class="logo-icon">🫧</span>
-            <span class="logo-text">WUWA</span>
-            <span class="logo-dot">.</span>
-            <span class="logo-ext">app</span>
+          <a class="logo-link" aria-label="wuwa.app 首頁" href="/">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M3 21h5l4-12 6 23 5-28 5 17h5" stroke="currentColor" stroke-width="1.5"/><path d="M3 27h5m20 0h5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span class="logo-text">WUWA<span class="logo-ext">.app</span></span>
           </a>
-          <nav class="header-nav"><a class="header-nav-link" href="/">新聞</a><a class="header-nav-link" href="/calc/">計算機</a></nav>
-          <span class="header-subtitle"></span>
-          <a class="header-github-link" href="https://github.com/ttdyce/wuwa_app" target="_blank">
+          <span class="header-subtitle">THE UNOFFICIAL FIELD STATION</span>
+          <nav class="header-nav" aria-label="主要導覽">
+            <a class="header-nav-link" href="/"><span class="nav-index" aria-hidden="true">01</span>探索首頁</a>
+            <a class="header-nav-link active" aria-current="page" href="/#news"><span class="nav-index" aria-hidden="true">02</span>最新情報</a>
+            <a class="header-nav-link" href="/calc/"><span class="nav-index" aria-hidden="true">03</span>抽卡計算機</a>
+          </nav>
+          <a class="header-official" rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">官方網站<span aria-hidden="true">↗</span></a>
+          <a class="header-github-link" aria-label="GitHub 原始碼（在新分頁開啟）" rel="noopener noreferrer" href="https://github.com/ttdyce/wuwa_app" target="_blank">
             <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           </a>
         </div>
       </header>
-      <main class="container article-container">
-        <a class="back-link" href="/">← 返回列表 BACK</a>
+      <main id="main-content" class="container article-container page-main">
+        <a class="back-link" href="/#news">← 返回情報站 / ALL TRANSMISSIONS</a>
         <div class="article-header">
+          <p class="eyebrow">THE SOLARIS DISPATCH / OFFICIAL NEWS</p>
           <span class="article-category">公告</span>
           <h1 class="article-title">「自星海盡處迴響」3.3版本內容說明</h1>
-          <span class="article-date">2026.04.30</span>
+          <span class="article-date">2026.04.30 · 官方情報轉載</span>
         </div>
         <div class="article-content">
           <div>
@@ -117,13 +107,13 @@
           <p data-zone-id="0" data-line-index="43" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="44" data-line="true"><strong>✦全新劇情✦</strong></p>
           <p data-zone-id="0" data-line-index="45" data-line="true"><strong>【潮汐任務】第三章・幕間「願繫鈴中」</strong></p>
-          <p data-zone-id="0" data-line-index="46" data-line="true">緋雪利用紙役對虛質深處進行了探查，察覺了愛彌斯的頻率仍在。隨著近期虛質活躍的情況加重，洛瑟菈打算委託緋雪鎮守地下黯原，但在此之前，緋雪尚有些未盡之事要處理&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="46" data-line="true">緋雪利用紙役對虛質深處進行了探查，察覺了愛彌斯的頻率仍在。隨著近期虛質活躍的情況加重，洛瑟菈打算委託緋雪鎮守地下黯原，但在此之前，緋雪尚有些未盡之事要處理……</p>
           <p data-zone-id="0" data-line-index="47" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="48" data-line="true">✦開放時間：3.3版本更新後永久開放</p>
           <p data-zone-id="0" data-line-index="49" data-line="true">✦開放條件：完成【幕間・潮汐續聞】「影面顛倒的兔影」後解鎖。</p>
           <p data-zone-id="0" data-line-index="50" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="51" data-line="true"><strong>【潮汐任務】第三章・第五幕「昨夜群星」</strong></p>
-          <p data-zone-id="0" data-line-index="52" data-line="true">鳴式阿列夫一對拉海洛的影響日益加劇，拉海洛地區的虛質濃度正不斷上升，深空聯合將接受你的提議，啟動隧者計劃，你將帶著眾人的希望啟動隧者，進入虛質空間深處&mdash;&mdash;為了拉海洛，也為了尋回那隻從你指縫間溜走的紙飛機。拉海洛&hellip;&hellip;到底將走向何處？</p>
+          <p data-zone-id="0" data-line-index="52" data-line="true">鳴式阿列夫一對拉海洛的影響日益加劇，拉海洛地區的虛質濃度正不斷上升，深空聯合將接受你的提議，啟動隧者計劃，你將帶著眾人的希望啟動隧者，進入虛質空間深處——為了拉海洛，也為了尋回那隻從你指縫間溜走的紙飛機。拉海洛……到底將走向何處？</p>
           <p data-zone-id="0" data-line-index="53" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="54" data-line="true">✦開放時間：3.3版本更新後永久開放</p>
           <p data-zone-id="0" data-line-index="55" data-line="true">✦開放條件：完成【潮汐任務】第三章・幕間「願繫鈴中」後解鎖。</p>
@@ -131,7 +121,7 @@
           <p data-zone-id="0" data-line-index="57" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="58" data-line="true"><strong>【潮汐任務】第三章・幕間「在熔解的夜空下」</strong></p>
           <p data-zone-id="0" data-line-index="59" data-line="true">決戰過後，深空聯合和星炬學院逐漸回到了應有的軌道上。</p>
-          <p data-zone-id="0" data-line-index="60" data-line="true">在那之後的某天，你收到了深空聯合的聯絡，得知了關於達妮婭的消息&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="60" data-line="true">在那之後的某天，你收到了深空聯合的聯絡，得知了關於達妮婭的消息……</p>
           <p data-zone-id="0" data-line-index="61" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="62" data-line="true">✦開放時間：2026年5月21日10:00永久開放（伺服器時間）</p>
           <p data-zone-id="0" data-line-index="63" data-line="true">✦開放條件：完成【潮汐任務】第三章・幕間「願繫鈴中・續」後解鎖。</p>
@@ -155,7 +145,7 @@
           <p data-zone-id="0" data-line-index="81" data-line="true">✦活動時間：2026年5月2日10:00 ~ 2026年6月7日11:59（伺服器時間）</p>
           <p data-zone-id="0" data-line-index="82" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="83" data-line="true"><strong>[嗚嗚急送・使命必達]週年限時委託活動</strong></p>
-          <p data-zone-id="0" data-line-index="84" data-line="true">對於嗚嗚物流的快遞員而言，任何艱難險阻都絕對無法動搖他們將貨物安全送達的決心。而隨著《第二索拉》與嗚嗚物流的聯名季正式上線，快遞員們也進入了一年中最繁忙的日子&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="84" data-line="true">對於嗚嗚物流的快遞員而言，任何艱難險阻都絕對無法動搖他們將貨物安全送達的決心。而隨著《第二索拉》與嗚嗚物流的聯名季正式上線，快遞員們也進入了一年中最繁忙的日子……</p>
           <p data-zone-id="0" data-line-index="85" data-line="true">✦活動時間：2026年5月7日04:00 ~ 2026年6月7日11:59（伺服器時間）</p>
           <p data-zone-id="0" data-line-index="86" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="87" data-line="true"><strong>[小團快跑・錦標賽]週年慶典活動</strong></p>
@@ -175,7 +165,7 @@
           <p data-zone-id="0" data-line-index="101" data-line="true"><strong>【週年慶典H5活動】：</strong></p>
           <p data-zone-id="0" data-line-index="102" data-line="true"><strong>[探秘！記憶程式]網頁活動</strong></p>
           <p data-zone-id="0" data-line-index="103" data-line="true">傳聞中有一個神秘的電子程式，能讀取使用者的記憶數據，並將它們在程式世界裡以各種方式投射出來。</p>
-          <p data-zone-id="0" data-line-index="104" data-line="true">進入神秘的程式世界，回看一下自己過往的種種經歷吧。或許途中會有意想不到的發現&hellip;&hellip;？</p>
+          <p data-zone-id="0" data-line-index="104" data-line="true">進入神秘的程式世界，回看一下自己過往的種種經歷吧。或許途中會有意想不到的發現……？</p>
           <p data-zone-id="0" data-line-index="105" data-line="true">✦開放時間：3.3版本更新後 ~ 3.4版本結束前</p>
           <p data-zone-id="0" data-line-index="106" data-line="true">※具體活動結束時間請關注後續公告。</p>
           <p data-zone-id="0" data-line-index="107" data-line="true">&nbsp;</p>
@@ -194,7 +184,7 @@
           <p data-zone-id="0" data-line-index="120" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="121" data-line="true"><strong>【版本活動】：</strong></p>
           <p data-zone-id="0" data-line-index="122" data-line="true"><strong>「深墜異想奇境・異構綺夢」</strong></p>
-          <p data-zone-id="0" data-line-index="123" data-line="true">心之集域的門扉出現在了拉海洛，而夢中的情境混亂交錯，甚至還出現了波仔的身影&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="123" data-line="true">心之集域的門扉出現在了拉海洛，而夢中的情境混亂交錯，甚至還出現了波仔的身影……</p>
           <p data-zone-id="0" data-line-index="124" data-line="true">✦活動時間：2026年5月21日10:00 ~ 2026年6月7日03:59（伺服器時間）</p>
           <p data-zone-id="0" data-line-index="125" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="126" data-line="true"><strong>[黯原尋跡]區域探索活動</strong></p>
@@ -203,7 +193,7 @@
           <p data-zone-id="0" data-line-index="129" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="130" data-line="true"><strong>[黯原憶旅]留影收集活動</strong></p>
           <p data-zone-id="0" data-line-index="131" data-line="true">黯原的危機結束，星炬學院的一切似乎都已回歸正軌。拉海洛的夜空中，必將記錄下每一顆於昨夜閃耀的群星。</p>
-          <p data-zone-id="0" data-line-index="132" data-line="true">而現在。一位即將畢業的學生。即將在黯原展開他的畢業旅行&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="132" data-line="true">而現在。一位即將畢業的學生。即將在黯原展開他的畢業旅行……</p>
           <p data-zone-id="0" data-line-index="133" data-line="true">✦開放時間：3.3版本更新後永久開放</p>
           <p data-zone-id="0" data-line-index="134" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="135" data-line="true"><strong>[衝擊！戰鬥學位考試！]限時戰鬥活動</strong></p>
@@ -221,7 +211,7 @@
           <p data-zone-id="0" data-line-index="147" data-line="true"><strong>【新增玩法】：</strong></p>
           <p data-zone-id="0" data-line-index="148" data-line="true"><strong>「勘探悖論之域」全新常駐玩法</strong></p>
           <p data-zone-id="0" data-line-index="149" data-line="true">星炬學院與羅伊族進駐黯原，對這片多年來近乎與外界隔絕的秘地展開全面考察。考察目的包括勘探收集黯原環境數據，回收遠古植物樣本和隧者元件，完成虛質磁暴遺留的環境侵蝕治理等，活動成果將有力推動拉海洛生態研究建設進程。</p>
-          <p data-zone-id="0" data-line-index="150" data-line="true">I.R.I.S.向你傳來飛訊，邀請你參加這一期考察&hellip;&hellip;</p>
+          <p data-zone-id="0" data-line-index="150" data-line="true">I.R.I.S.向你傳來飛訊，邀請你參加這一期考察……</p>
           <p data-zone-id="0" data-line-index="151" data-line="true">✦開放時間：3.3版本更新後永久開放</p>
           <p data-zone-id="0" data-line-index="152" data-line="true">&nbsp;</p>
           <p data-zone-id="0" data-line-index="153" data-line="true"><strong>✦其他全新內容✦</strong></p>
@@ -388,7 +378,7 @@
           <p data-zone-id="0" data-line-index="5" data-line="true">- 修復了共鳴者「愛彌斯」在【黎那汐塔】-【下層金庫】特定區域內，施放共鳴解放【星輝破界而來・過載】時，有機率出現角色會異常被傳送至當前地圖內其他區域的問題。</p>
           <p data-zone-id="0" data-line-index="6" data-line="true">- 修復了共鳴者「愛彌斯」在特定操作下施放共鳴技能【構型切換】後，有機率出現可以異常在空中行走的問題。</p>
           <p data-zone-id="0" data-line-index="7" data-line="true">- 修復了共鳴者「愛彌斯」的部分技能語音未正常播放完整的問題。</p>
-          <p data-zone-id="0" data-line-index="8" data-line="true">- 修復了共鳴者「琳奈」在處於【共鳴模態&middot;集諧】時，戰鬥中部分技能有機率出現異常卡頓的問題。</p>
+          <p data-zone-id="0" data-line-index="8" data-line="true">- 修復了共鳴者「琳奈」在處於【共鳴模態·集諧】時，戰鬥中部分技能有機率出現異常卡頓的問題。</p>
           <p data-zone-id="0" data-line-index="9" data-line="true">- 修復了共鳴者「奧古斯塔」的部分技能特效在切換至其他角色後未正常消失的問題。</p>
           <p data-zone-id="0" data-line-index="10" data-line="true">- 修復了共鳴者「芙露德莉斯」在特定場景內進行【快速旅行】後，有機率出現生命值異常減少的問題。</p>
           <p data-zone-id="0" data-line-index="11" data-line="true">- 修復了共鳴者「贊妮」在和【終焉矩陣】-【矩陣奇藏】的戰鬥中，延奏技能【來日道標】中【造成贊妮150%攻擊的衍射傷害並清空其擁有的烈陽餘燼】效果未正常生效的問題。</p>
@@ -413,7 +403,7 @@
           <p data-zone-id="0" data-line-index="30" data-line="true"><strong>●玩法&amp;活動</strong></p>
           <p data-zone-id="0" data-line-index="31" data-line="true"><strong> </strong>- 修復了在[諸星密語]-[洛瑟菈]活動中，【活動任務】「《工學部修理場景》」的解鎖條件【於8:00~10:00與洛瑟菈互動】在特定情況下會出現調整時間後「洛瑟菈」未正常出現的問題。</p>
           <p data-zone-id="0" data-line-index="32" data-line="true">- 修復了在[諸星密語]-[琳奈]活動中，【活動任務】「就給你看機器人」-「尋找試作型巡航機械」任務流程中，有機率出現異常離開【科考摩托】，導致後續任務無法繼續進行的問題。</p>
-          <p data-zone-id="0" data-line-index="33" data-line="true">- 修復了在[千島路書]活動中，部分漂泊者會出現【千島漫遊的珍藏】-【贊悼聖跡】-【完成一次全像戰略&middot;刀伶之舞】任務無法完成的問題。</p>
+          <p data-zone-id="0" data-line-index="33" data-line="true">- 修復了在[千島路書]活動中，部分漂泊者會出現【千島漫遊的珍藏】-【贊悼聖跡】-【完成一次全像戰略·刀伶之舞】任務無法完成的問題。</p>
           <p data-zone-id="0" data-line-index="34" data-line="true">- 修復了在[榮耀之丘：激鬥重燃]活動中，部分決鬥家的頭像顯示有誤的問題。</p>
           <p data-zone-id="0" data-line-index="35" data-line="true">- 修復了在【終焉矩陣】玩法中，有機率出現戰鬥結算介面未正常播放角色動畫的問題。</p>
           <p data-zone-id="0" data-line-index="36" data-line="true">- 修復了在【終焉矩陣】玩法中，特定情況下有機率出現戰鬥中倒數計時提前結束的問題。</p>
@@ -441,8 +431,22 @@
           </div>
           </div>
         </div>
+        <div class="article-end">
+          <a class="button-text" href="/#news">繼續探索更多情報 ↗</a>
+          <a rel="noopener noreferrer" href="https://wutheringwaves.kurogames.com/zh-tw/main/" target="_blank">鳴潮官方網站 ↗</a>
+        </div>
       </main>
-      <footer class="footer"><span>© 2026 wuwa.app — Not affiliated with Kuro Games</span></footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-brand"><a class="logo-text" href="/">WUWA<span class="logo-ext">.app</span></a><p>鳴潮新消息，這裡見。</p></div>
+          <div class="footer-credits">
+            <p>非官方玩家情報站 · UNOFFICIAL FAN PROJECT</p>
+            <p>遊戲內容與美術版權歸 KURO GAMES 所有。本站與官方無隸屬關係。</p>
+            <span class="footer-copyright">© 2026 wuwa.app</span>
+          </div>
+          <a class="back-to-top" href="#main-content">返回頂部<span aria-hidden="true">↑</span></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
