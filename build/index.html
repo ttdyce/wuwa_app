@@ -68,21 +68,57 @@
             <div class="patch-timeline">
               <div class="patch-labels">
                 <div class="patch-label-left"><span class="patch-version">v3.7</span><span class="patch-name">鏡鎖妄世，心照紅塵</span></div>
-                <div class="patch-countdown patch-next-soon">下次更新敬請期待</div>
-                <div class="patch-label-right patch-next-unknown"><span class="patch-version">持續共鳴中</span></div>
+                <div class="patch-countdown" data-target="2026-11-11T16:00:00.000Z" id="patch-countdown">計算中…</div>
+                <div class="patch-label-right"><span class="patch-version">v3.8</span><span class="patch-name">舊夢凋零的百合</span></div>
               </div>
               <div class="patch-track" id="patch-track" aria-hidden="true">
-                <div class="patch-bar" id="patch-bar" style="width: 100.0%"></div>
-                <div class="patch-marker" id="patch-marker" style="left: 100.0%"></div>
+                <div class="patch-bar" id="patch-bar" style="width: 88.76152637812231%"></div>
+                <div class="patch-marker" id="patch-marker" style="left: 88.76152637812231%"></div>
               </div>
-              <div class="patch-dates"><span>2026.09.30</span></div>
+              <div class="patch-dates"><span>2026.09.30</span><span>2026.11.12</span></div>
+              <script>
+              (function() {
+                var el = document.getElementById('patch-countdown');
+                var bar = document.getElementById('patch-bar');
+                var marker = document.getElementById('patch-marker');
+                if (!el) return;
+              
+                var target = new Date(el.getAttribute('data-target')).getTime();
+                var start = new Date('2026-09-29T16:00:00.000Z').getTime();
+                if (isNaN(target)) return;
+              
+                function pad(n) { return n < 10 ? '0' + n : n; }
+              
+                function tick() {
+                  var now = Date.now();
+                  var progress = Math.max(0, Math.min(100, (now - start) / (target - start) * 100));
+                  if (bar) bar.style.width = progress + '%';
+                  if (marker) marker.style.left = progress + '%';
+                  var diff = target - now;
+                  if (diff <= 0) {
+                    el.textContent = '\u5df2\u66f4\u65b0';
+                    if (bar) bar.style.width = '100%';
+                    if (marker) marker.style.left = '100%';
+                    return;
+                  }
+                  var d = Math.floor(diff / 86400000);
+                  var h = Math.floor((diff % 86400000) / 3600000);
+                  var m = Math.floor((diff % 3600000) / 60000);
+                  var s = Math.floor((diff % 60000) / 1000);
+                  el.textContent = d + '\u5929 ' + pad(h) + '\u6642 ' + pad(m) + '\u5206 ' + pad(s) + '\u79d2';
+                }
+              
+                tick();
+                setInterval(tick, 1000);
+              })();
+              </script>
             </div>
           </div>
           <div class="news-layout">
             <section id="news" class="news-section" aria-labelledby="news-title">
               <div class="section-heading">
                 <div><p class="eyebrow">01 / LATEST TRANSMISSIONS</p><h2 id="news-title">最新情報</h2></div>
-                <span id="search-count" class="search-count" aria-live="polite" aria-atomic="true">624 則情報</span>
+                <span id="search-count" class="search-count" aria-live="polite" aria-atomic="true">625 則情報</span>
               </div>
               <div class="news-controls">
                 <div class="category-filter" role="group" aria-label="情報分類">
@@ -114,6 +150,14 @@
                 </div>
                 <div class="article-group" data-article-group>
                   <h3 class="month-header">2026年11月</h3>
+                  <a class="article-card" data-news-card data-category="公告" data-title="《鳴潮》版本前瞻 | 3.8版本「舊夢凋零的百合」11月12日即將更新" href="/article/5688.html">
+                    <span class="card-date">2026.11.06</span>
+                    <div class="card-body">
+                      <span class="card-category">公告</span>
+                      <h4 class="card-title">《鳴潮》版本前瞻 | 3.8版本「舊夢凋零的百合」11月12日即將更新</h4>
+                    </div>
+                    <span class="card-arrow" aria-hidden="true">↗</span>
+                  </a>
                   <a class="article-card" data-news-card data-category="公告" data-title="桌布分享 | 九方故影……準備好了" href="/article/5674.html">
                     <span class="card-date">2026.11.02</span>
                     <div class="card-body"><span class="card-category">公告</span><h4 class="card-title">桌布分享 | 九方故影……準備好了</h4></div>
@@ -3401,7 +3445,7 @@
                 <p id="visible-count" aria-live="polite" hidden></p>
                 <button id="load-more" class="load-more" type="button" hidden onclick="loadMoreArticles()">載入更多情報<span aria-hidden="true">+</span></button>
               </div>
-              <p class="build-info">資料更新 2026.11.06 19:50 · UTC+8</p>
+              <p class="build-info">資料更新 2026.11.07 04:01 · UTC+8</p>
               <noscript><p class="build-info">已顯示完整情報列表。開啟 JavaScript 即可搜尋與篩選。</p></noscript>
             </section>
             <aside class="rover-sidebar" aria-label="漂泊者工具與連結">
